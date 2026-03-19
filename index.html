@@ -120,8 +120,8 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 .key-screen{position:fixed;inset:0;z-index:999;background:rgba(7,4,14,.96);display:flex;align-items:center;justify-content:center;padding:24px}
 .key-box{background:rgba(12,7,32,.9);border:1px solid rgba(200,168,75,.4);padding:32px 28px;max-width:420px;width:100%;text-align:center;border-radius:8px}
 .key-owl{font-size:48px;margin-bottom:16px;filter:drop-shadow(0 0 16px rgba(200,168,75,.4))}
-.key-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gbright);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
-.key-desc{font-size:14px;color:rgba(237,227,208,.7);line-height:1.75;margin-bottom:22px}
+.key-title{font-family:'Orbitron',sans-serif;font-size:16px;color:var(--gbright);letter-spacing:4px;text-transform:uppercase;margin-bottom:14px}
+.key-desc{font-size:17px;color:rgba(237,227,208,.82);line-height:1.95;margin-bottom:22px;font-style:italic}
 .key-inp{width:100%;background:rgba(6,3,15,.9);border:1px solid rgba(200,168,75,.35);color:var(--parchment);padding:13px 16px;font-family:'Cormorant Garamond',serif;font-size:15px;border-radius:4px;outline:none;margin-bottom:12px;text-align:center;letter-spacing:1px}
 .key-inp::placeholder{color:rgba(237,227,208,.3);font-style:italic;letter-spacing:0}
 .key-note{font-size:11.5px;color:rgba(237,227,208,.45);font-style:italic;margin-top:10px;line-height:1.6}
@@ -242,23 +242,14 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 <footer><div>🦉</div><div id="footerT">Baykuş Tarot · Kartlar rehber, seçim senindir</div></footer>
 </div>
 
-<!-- API KEY SCREEN -->
+<!-- KARŞILAMA EKRANI -->
 <div class="key-screen" id="keyScreen">
   <div class="key-box">
     <div class="key-owl">🦉</div>
-    <div class="key-title">Baykuş Tarot</div>
-    <div class="key-desc" id="keyDesc">Uygulamayı kullanmak için<br>OpenAI API key giriniz.</div>
-    <input class="key-inp" id="keyInp" type="password" placeholder="sk-ant-..." 
-           onkeydown="if(event.key==='Enter')saveKey()">
-    <button class="btn-go" style="width:100%;margin-top:4px" onclick="saveKey()" id="keyBtn">✦ Başla</button>
-    <div class="key-err" id="keyErr">Geçersiz key. sk-ant- ile başlamalı.</div>
-    <div class="key-note" id="keyNote">Key güvenli olarak cihazınıza kaydedilir.<br>platform.openai.com adresinden alabilirsiniz.</div>
-    <div style="margin-top:14px">
-      <button onclick="testKey()" style="background:transparent;border:1px solid rgba(200,168,75,.3);color:rgba(237,227,208,.5);padding:6px 14px;font-size:11px;cursor:pointer;border-radius:4px;font-family:Cinzel,serif">
-        Bağlantıyı Test Et
-      </button>
-    </div>
-    <div id="testResult" style="font-size:12px;margin-top:8px;color:rgba(237,227,208,.6)"></div>
+    <div class="key-title" id="welcomeTitle">Baykuş Tarot</div>
+    <div class="key-desc" id="welcomeDesc">Merhaba.<br>Ben Baykuş.<br><br>Kartların sesi, senin gerçeğin.<br>Benimle sorularına cevap bulmaya<br>hazır mısın?</div>
+    <button class="btn-go" style="width:100%;margin-top:24px" onclick="startWithKey()" id="keyBtn">🦉 Hazırım</button>
+    <div class="key-err" id="keyErr" style="display:none"></div>
   </div>
 </div>
 
@@ -502,9 +493,17 @@ function applyT(){
 async function init(){
   applyT();
   loadDaily();
-  // Check API key first
+  // Key ekranını göster — kullanıcı Hazırım'a basınca devam eder
   const hasKey = await loadKey();
-  if(!hasKey) return; // Key screen will show
+  if(hasKey){
+    // Key zaten var, direkt devam
+    document.getElementById('keyScreen').style.display = 'none';
+    await initAfterKey();
+  }
+  // Yoksa karşılama ekranı görünür
+}
+
+async function initAfterKey(){
   const n=await sGet('bk_name'),l=await sGet('bk_lang');
   if(l) setLang(l);
   if(n){uName=n;skipWelcome();}
@@ -810,21 +809,27 @@ let API_KEY = '';
 const DAILY_LIMIT = 10;
 
 async function loadKey(){
-  // Sabit key — kullanıcılar görmez
+  // Sabit key — otomatik yüklenir
   const SABIT_KEY = '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';
   if(SABIT_KEY && SABIT_KEY !== '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'){
     API_KEY = SABIT_KEY;
-    document.getElementById('keyScreen').style.display = 'none';
-    return true;
-  }
-  // Key girilmemişse localStorage'a bak
-  const local = localStorage.getItem('bk_apikey');
-  if(local && local.startsWith('sk-')){
-    API_KEY = local;
-    document.getElementById('keyScreen').style.display = 'none';
     return true;
   }
   return false;
+}
+
+function startWithKey(){
+  // Hazırım butonuna basınca key'i set et ve devam et
+  loadKey().then(function(ok){
+    if(ok){
+      document.getElementById('keyScreen').style.display = 'none';
+      // init devam etsin
+      initAfterKey();
+    } else {
+      document.getElementById('keyErr').textContent = 'Yapılandırma hatası.';
+      document.getElementById('keyErr').style.display = 'block';
+    }
+  });
 }
 
 async function testKey(){
