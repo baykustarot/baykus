@@ -629,13 +629,61 @@ async function interpret(){
 
   const prompt=lang==='tr'
     ? isDaily
-      ? `Sen Baykuş Tarot'sun. Sıcak, anlayışlı ve bilge bir sabah rehberisin.\n\nKütüphane:\n${LIB}\n\nKullanıcı: ${uName}\nBugünün kartı:\n${cdesc}\n\nGÜNLÜK KART YORUMU:\n- Sabah enerjisiyle, güne hazırlamak için yaz\n- ${uName} ismini yorumun içinde 1-2 kez kullan\n- Bugün neler hissedebilir, neye dikkat etmeli, hangi enerjiyle ilerlemeli\n- Yumuşak, motive edici, umut verici ton\n- "fısıldıyor", "hatırlatıyor", "gösteriyor" gibi ifadeler\n\nSADECE şu formatta yanıt ver:\nYORUM: [180-220 kelime. Bugüne özel. Kartın enerjisini güne yansıt. Yumuşak ve motive edici.]\n---\nÖZET: [Bugün için 1 güçlü cümle. "Bugün seni şu bekliyor..." tarzında.]\n---\nNİYET: [Bugün için 1 niyet cümlesi. "Bugün ben..." ile başlasın.]`
-      : `Sen Baykuş Tarot'sun. Derin bilgiye sahip, sıcak ve anlayışlı bir tarot rehberisin.\n\nKütüphane:\n${LIB}\n\nKullanıcı: ${uName}\nKonu: ${cn}\nSoru: "${q}"${hCtx}\n\nKartlar:\n${cdesc}\n\nYORUM TARZI:\n- Gerçekçi ama yumuşak. "Yapmalısın" değil "belki düşünebilirsin"\n- Yargılamayan, kapı açık bırakan\n- ${uName} ismini yorumun içinde 1-2 kez kullan\n- "fısıldıyor", "işaret ediyor", "gösteriyor" gibi ifadeler\n- Kesin hüküm değil, olasılık ve seçenek sun\n\nSADECE şu formatta yanıt ver:\nYORUM: [220-270 kelime. Düz Türkçe. Soruya direkt cevap. Her kartı soruyla bağdaştır. Yumuşak ton, kapı açık.]\n---\nÖZET: [1 güçlü ama yumuşak cümle. Soruya özel.]\n---\nADIM: [1-2 somut küçük adım. "Belki..." veya "Düşünebilirsin:" ile başla.]`
+      ? `Kullanıcı adı: ${uName}. Bugünün tarot kartı: ${cdesc}
+
+Kütüphane bağlamı: ${LIB}
+
+Günlük kart yorumu yaz. ${uName} ismini 1-2 kez kullan. Sabah enerjisi, güne hazırlık, yumuşak ve motive edici ton.
+
+Yanıtını TAM OLARAK şu formatta ver:
+YORUM: [Buraya 180-220 kelime günlük yorum yaz. Kartın enerjisini bugüne yansıt. Yumuşak, motive edici.]
+---
+ÖZET: [Buraya tek cümle yaz. "Bugün seni..." ile başla.]
+---
+NİYET: [Buraya tek niyet cümlesi yaz. "Bugün ben..." ile başla.]`
+      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}
+
+Kütüphane bağlamı: ${LIB}
+
+Kartlar: ${cdesc}
+
+Tarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Gerçekçi ama yumuşak ton. "Belki", "olabilir", "düşünebilirsin" gibi ifadeler kullan. Kartları soruyla bağdaştır.
+
+Yanıtını TAM OLARAK şu formatta ver:
+YORUM: [Buraya 220-270 kelime yorum yaz. Soruya direkt cevap ver. Her kartı soruyla bağdaştır.]
+---
+ÖZET: [Buraya tek güçlü cümle yaz.]
+---
+ADIM: [Buraya 1-2 somut adım yaz. "Belki..." ile başla.]`
     : isDaily
-      ? `You are Baykuş Tarot. A warm, wise morning guide.\n\nLibrary:\n${LIB}\n\nUser: ${uName}\nToday's card:\n${cdesc}\n\nDAILY CARD READING:\n- Write to prepare for the day, with morning energy\n- Use ${uName}'s name 1-2 times\n- What might they feel today, what to pay attention to, what energy to carry\n- Gentle, motivating, hopeful tone\n\nONLY this format:\nREADING: [180-220 words. Today-specific. Reflect the card's energy onto the day. Gentle and motivating.]\n---\nSUMMARY: [1 powerful sentence for today. "Today..." style.]\n---\nINTENTION: [1 intention for today. Start with "Today I..."]`
-      : `You are Baykuş Tarot. A warm, insightful tarot guide.\n\nLibrary:\n${LIB}\n\nUser: ${uName}\nTopic: ${cn}\nQuestion: "${q}"${hCtx}\n\nCards:\n${cdesc}\n\nSTYLE:\n- Realistic but gentle\n- Non-judgmental, leaving choices open\n- Use ${uName}'s name 1-2 times\n- Cards "whisper", "suggest", "show"\n\nONLY this format:\nREADING: [220-270 words. Direct answer. Connect cards to question. Gentle tone.]\n---\nSUMMARY: [1 strong but gentle sentence.]\n---\nSTEP: [1-2 small steps. Start with "Perhaps..." or "You might:"]`;
+      ? `User: ${uName}. Today's tarot card: ${cdesc}
+
+Library: ${LIB}
+
+Write a daily card reading. Use ${uName}'s name 1-2 times. Morning energy, gentle and motivating tone.
+
+Reply in EXACTLY this format:
+READING: [Write 180-220 word daily reading here. Reflect card energy onto the day.]
+---
+SUMMARY: [Write one sentence here. Start with "Today..."]
+---
+INTENTION: [Write one intention here. Start with "Today I..."]`
+      : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}
+
+Library: ${LIB}
+
+Cards: ${cdesc}
+
+Write a tarot reading. Use ${uName}'s name 1-2 times. Realistic but gentle tone. Use "perhaps", "might", "could" style language.
+
+Reply in EXACTLY this format:
+READING: [Write 220-270 word reading here. Answer the question directly. Connect each card to the question.]
+---
+SUMMARY: [Write one powerful sentence here.]
+---
+STEP: [Write 1-2 concrete steps here. Start with "Perhaps..."]`;
   try{
-    const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},body:JSON.stringify({model:'gpt-4o-mini',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
+    const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},body:JSON.stringify({model:'gpt-4o-mini',max_tokens:1200,messages:[{role:'system',content:'Sen Baykuş Tarot\'sun. Derin bilgiye sahip, sıcak ve anlayışlı bir tarot rehberisin. Türkçe yaz. Verilen formata kesinlikle uy.'},{role:'user',content:prompt}]})});
     const d=await r.json();
     if(!r.ok){
       const msg = d.error?.message || ('HTTP '+r.status);
