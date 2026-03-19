@@ -810,22 +810,20 @@ let API_KEY = '';
 const DAILY_LIMIT = 10;
 
 async function loadKey(){
-  // localStorage önce — daha güvenilir
+  // Sabit key — kullanıcılar görmez
+  const SABIT_KEY = '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';
+  if(SABIT_KEY && SABIT_KEY !== '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'){
+    API_KEY = SABIT_KEY;
+    document.getElementById('keyScreen').style.display = 'none';
+    return true;
+  }
+  // Key girilmemişse localStorage'a bak
   const local = localStorage.getItem('bk_apikey');
   if(local && local.startsWith('sk-')){
     API_KEY = local;
     document.getElementById('keyScreen').style.display = 'none';
     return true;
   }
-  try {
-    const stored = await sGet('bk_apikey');
-    if(stored && stored.startsWith('sk-')){
-      API_KEY = stored;
-      localStorage.setItem('bk_apikey', stored);
-      document.getElementById('keyScreen').style.display = 'none';
-      return true;
-    }
-  } catch(e){}
   return false;
 }
 
