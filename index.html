@@ -214,6 +214,33 @@ body.light .key-note { color: rgba(42,31,14,.5); }
 body.light .limit-box { background: rgba(245,240,232,.95); border-color: rgba(139,105,20,.3); }
 body.light .limit-msg { color: rgba(42,31,14,.78); }
 body.light .rbox-title { color: #6b4f10; }
+
+body.light .name-inp::placeholder { color: rgba(42,31,14,.35); }
+body.light #nameHint { color: rgba(42,31,14,.55); }
+body.light .q-note { color: rgba(42,31,14,.7); }
+body.light .disclaimer { color: rgba(42,31,14,.65); }
+body.light footer { color: rgba(42,31,14,.5); }
+body.light .daily-msg { color: rgba(42,31,14,.65); }
+body.light .welcome-msg { color: #2a1f0e; }
+body.light .welcome-msg span { color: rgba(42,31,14,.55) !important; }
+body.light .fb-sent { color: #6b4f10; }
+body.light .loading { color: rgba(42,31,14,.5); }
+body.light .ring { border-color: rgba(139,105,20,.15); border-top-color: var(--gold); }
+body.light .intent-lbl { color: #6b4f10; }
+body.light .rbox::before { color: #6b4f10; }
+body.light .share-title { color: #5a5070; }
+body.light .fb-title { color: #5a5070; }
+body.light .star { filter: grayscale(0.5); }
+body.light .btn-go { 
+  background: linear-gradient(135deg,rgba(139,21,37,.75),rgba(74,42,112,.95));
+  color: #f5f0e8;
+}
+body.light .key-title { color: #6b4f10; }
+body.light .limit-title { color: #6b4f10; }
+body.light .limit-sub { color: rgba(42,31,14,.5); }
+body.light .kvkkNote { color: rgba(42,31,14,.5) !important; }
+body.light .q-guide strong { color: rgba(139,105,20,.8); }
+
 body.light .rbox.rose .rbox-title { color: #8b5040; }
 body.light .rbox.violet .rbox-title { color: #4a2a70; }
 
@@ -911,6 +938,28 @@ function saveKey(){
   init();
 }
 
+
+function restart(){
+  yorumMod='kartli';
+  const yr=document.getElementById('ymodRow');if(yr)yr.style.display='none';
+  const ym1=document.getElementById('ymod1');if(ym1)ym1.classList.add('on');
+  const ym2=document.getElementById('ymod2');if(ym2)ym2.classList.remove('on');
+  cat=null;spread=null;q='';cards=[];rating=0;rTxt='';sTxt='';
+  const qInp=document.getElementById('qInp');
+  if(qInp){qInp.value='';qInp.style.borderColor='';}
+  const intBox=document.getElementById('intBox');if(intBox)intBox.style.display='none';
+  const s3note=document.getElementById('s3note');if(s3note)s3note.style.display='none';
+  const btnDraw=document.getElementById('btnDraw');if(btnDraw)btnDraw.style.display='none';
+  const fbSent=document.getElementById('fbSent');if(fbSent)fbSent.style.display='none';
+  const fbBtn=document.getElementById('fbBtn');if(fbBtn)fbBtn.style.display='block';
+  const fbMsg=document.getElementById('fbMsg');if(fbMsg)fbMsg.style.display='block';
+  const shareBox=document.getElementById('shareBox');if(shareBox)shareBox.style.display='none';
+  const fbBox=document.getElementById('fbBox');if(fbBox)fbBox.style.display='none';
+  const readingArea=document.getElementById('readingArea');if(readingArea)readingArea.innerHTML='';
+  document.querySelectorAll('.star').forEach(s=>s.classList.remove('lit'));
+  goStep(1);renderCats();renderSps();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
 let isDayMode = false;
 function toggleMode(){
