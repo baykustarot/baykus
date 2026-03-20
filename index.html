@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07040e">
 <title>Baykuş Tarot</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#07040e;--parchment:#ede3d0;
@@ -14,7 +14,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--parchment);font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.85;min-height:100vh;overflow-x:hidden}
+body{background:var(--ink);color:var(--parchment);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.85;min-height:100vh;overflow-x:hidden}
 .cosmos{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 20% 40%,#150830 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 65%,#0a0420 0%,transparent 55%),radial-gradient(ellipse 100% 100% at 50% 0%,#0a0418 0%,#060310 100%)}
 .cosmos::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.85) 0%,transparent 100%),radial-gradient(1px 1px at 20% 6%,rgba(200,168,75,.65) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 34% 22%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 52% 9%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 70% 4%,rgba(255,255,255,.85) 0%,transparent 100%),radial-gradient(1px 1px at 85% 16%,rgba(200,168,75,.55) 0%,transparent 100%),radial-gradient(1px 1px at 6% 58%,rgba(255,255,255,.45) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 42% 72%,rgba(200,168,75,.45) 0%,transparent 100%),radial-gradient(1px 1px at 65% 84%,rgba(255,255,255,.55) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 30% 94%,rgba(255,255,255,.8) 0%,transparent 100%);animation:starPulse 8s ease-in-out infinite alternate}
 @keyframes starPulse{0%{opacity:.55}100%{opacity:1}}
@@ -32,9 +32,9 @@ header{text-align:center;padding:44px 0 32px}
 .daily-msg{margin:18px auto 0;max-width:480px;font-style:italic;font-size:16px;color:rgba(237,227,208,.62);line-height:1.85;min-height:40px;text-align:center}
 .panel{display:none;animation:fadeUp .4s ease}.panel.on{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.welcome-msg{font-size:19px;line-height:1.95;color:var(--parchment);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;padding:20px 0}
+.welcome-msg{font-size:22px;line-height:1.95;color:var(--parchment);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;padding:20px 0}
 .name-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
-.name-inp{background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.3);color:var(--parchment);padding:15px 20px;font-family:'Cormorant Garamond',serif;font-size:18px;width:260px;border-radius:4px;outline:none;transition:border-color .25s}
+.name-inp{background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.3);color:var(--parchment);padding:15px 20px;font-family:Georgia,'Times New Roman',serif;font-size:18px;width:260px;border-radius:4px;outline:none;transition:border-color .25s}
 .name-inp:focus{border-color:rgba(200,168,75,.6)}
 .name-inp::placeholder{color:rgba(237,227,208,.22);font-style:italic}
 .btn-go{background:linear-gradient(135deg,rgba(122,21,37,.75),rgba(46,18,80,.95));border:1px solid var(--gold);color:var(--gbright);padding:16px 32px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;cursor:pointer;transition:all .35s;text-transform:uppercase;border-radius:4px;position:relative;overflow:hidden}
@@ -52,20 +52,20 @@ header{text-align:center;padding:44px 0 32px}
 .cat-btn:hover,.cat-btn.on{border-color:rgba(200,168,75,.55);background:rgba(200,168,75,.07);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
 .cat-icon{font-size:28px;margin-bottom:9px}
 .cat-name{font-family:'Cinzel',serif;font-size:10.5px;color:#e8cc7a;letter-spacing:1.5px;text-transform:uppercase;line-height:1.4;margin-top:2px;font-weight:600}
-.q-guide{background:rgba(46,18,80,.2);border:1px solid rgba(200,168,75,.15);border-left:2px solid rgba(200,168,75,.4);padding:13px 16px;margin-bottom:14px;font-size:14px;color:rgba(237,227,208,.82);font-style:italic;line-height:1.75;border-radius:0 4px 4px 0}
+.q-guide{background:rgba(46,18,80,.2);border:1px solid rgba(200,168,75,.15);border-left:2px solid rgba(200,168,75,.4);padding:13px 16px;margin-bottom:14px;font-size:16px;color:rgba(237,227,208,.82);font-style:italic;line-height:1.75;border-radius:0 4px 4px 0}
 .q-guide strong{color:rgba(200,168,75,.7);font-style:normal;font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:5px}
 .q-examples{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
 .q-ex{background:rgba(8,4,18,.6);border:1px solid rgba(200,168,75,.28);padding:8px 14px;font-size:13.5px;color:rgba(237,227,208,.75);cursor:pointer;transition:all .2s;border-radius:20px;font-style:italic}
 .q-ex:hover{border-color:var(--gold);color:var(--gbright);background:rgba(200,168,75,.06)}
-.q-ta{width:100%;background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.28);color:var(--parchment);padding:15px 16px;font-family:'Cormorant Garamond',serif;font-size:17px;resize:none;min-height:95px;line-height:1.8;border-radius:4px;outline:none;transition:border-color .25s;margin-bottom:14px}
+.q-ta{width:100%;background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.28);color:var(--parchment);padding:15px 16px;font-family:Georgia,'Times New Roman',serif;font-size:17px;resize:none;min-height:95px;line-height:1.8;border-radius:4px;outline:none;transition:border-color .25s;margin-bottom:14px}
 .q-ta:focus{border-color:rgba(200,168,75,.5)}
 .q-ta::placeholder{color:rgba(237,227,208,.2);font-style:italic}
-.q-note{font-size:13px;color:rgba(237,227,208,.62);font-style:italic;margin-bottom:16px;text-align:center;line-height:1.6}
+.q-note{font-size:15px;color:rgba(237,227,208,.62);font-style:italic;margin-bottom:16px;text-align:center;line-height:1.6}
 .spread-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
 .sp-btn{background:rgba(8,4,18,.68);border:1px solid rgba(200,168,75,.18);padding:20px 14px;cursor:pointer;transition:all .3s;border-radius:4px}
 .sp-btn:hover,.sp-btn.on{border-color:rgba(200,168,75,.55);background:rgba(200,168,75,.07);transform:translateY(-2px)}
 .sp-name{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
-.sp-desc{font-size:13px;color:rgba(237,227,208,.75);font-style:italic}
+.sp-desc{font-size:15px;color:rgba(237,227,208,.75);font-style:italic}
 .intent-box{background:linear-gradient(135deg,rgba(46,18,80,.22),rgba(122,21,37,.08));border:1px solid rgba(200,168,75,.16);padding:18px 20px;margin-bottom:18px;text-align:center;border-radius:4px}
 .intent-lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.9}
 .intent-txt{font-size:16px;color:rgba(237,227,208,.88);font-style:italic;line-height:1.75}
@@ -91,7 +91,7 @@ header{text-align:center;padding:44px 0 32px}
 .cbox{background:linear-gradient(135deg,rgba(46,18,80,.14),rgba(122,21,37,.06));border:1px solid rgba(46,18,80,.35);padding:14px 18px;margin-bottom:14px;border-radius:4px}
 .cbox-title{font-family:'Cinzel',serif;font-size:9.5px;color:var(--silver);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
 .cbox-body{font-size:16.5px;line-height:1.9;color:rgba(220,216,240,.92)}
-.disclaimer{font-size:13.5px;color:rgba(237,227,208,.62);font-style:italic;text-align:center;margin:16px 0 10px;line-height:1.75}
+.disclaimer{font-size:16px;color:rgba(237,227,208,.62);font-style:italic;text-align:center;margin:16px 0 10px;line-height:1.75}
 .share-box{background:rgba(8,4,18,.6);border:1px solid rgba(200,168,75,.14);padding:16px 18px;margin-top:12px;border-radius:4px}
 .share-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--silver);text-transform:uppercase;margin-bottom:12px;opacity:.9;font-weight:600}
 .share-btns{display:flex;gap:8px;flex-wrap:wrap}
@@ -102,7 +102,7 @@ header{text-align:center;padding:44px 0 32px}
 .stars{display:flex;gap:9px;justify-content:center;margin-bottom:13px}
 .star{font-size:24px;cursor:pointer;opacity:.25;transition:all .2s;filter:grayscale(1)}
 .star:hover,.star.lit{opacity:1;filter:none;transform:scale(1.12)}
-.fb-ta{width:100%;background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.2);color:var(--parchment);padding:11px;font-family:'Cormorant Garamond',serif;font-size:14.5px;resize:none;min-height:65px;margin-bottom:11px;border-radius:4px;outline:none}
+.fb-ta{width:100%;background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.2);color:var(--parchment);padding:11px;font-family:Georgia,'Times New Roman',serif;font-size:15px;resize:none;min-height:65px;margin-bottom:11px;border-radius:4px;outline:none}
 .fb-ta::placeholder{color:rgba(237,227,208,.18);font-style:italic}
 .fb-sent{text-align:center;color:var(--gold);font-style:italic;font-size:13.5px;padding:8px;display:none}
 .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
@@ -134,16 +134,108 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 .ymod-desc{font-size:11.5px;color:rgba(237,227,208,.6);font-style:italic;margin-top:3px}
 
 
+
 /* API KEY SCREEN */
 .key-screen{position:fixed;inset:0;z-index:999;background:rgba(7,4,14,.96);display:none;align-items:center;justify-content:center;padding:24px}
 .key-box{background:rgba(12,7,32,.9);border:1px solid rgba(200,168,75,.4);padding:32px 28px;max-width:420px;width:100%;text-align:center;border-radius:8px}
 .key-owl{font-size:48px;margin-bottom:16px}
 .key-title{font-family:'Orbitron',sans-serif;font-size:16px;color:var(--gbright);letter-spacing:4px;text-transform:uppercase;margin-bottom:14px}
 .key-desc{font-size:17px;color:rgba(237,227,208,.82);line-height:1.95;margin-bottom:22px;font-style:italic}
-.key-inp{width:100%;background:rgba(6,3,15,.9);border:1px solid rgba(200,168,75,.35);color:var(--parchment);padding:13px 16px;font-family:'Cormorant Garamond',serif;font-size:15px;border-radius:4px;outline:none;margin-bottom:12px;text-align:center;letter-spacing:1px}
+.key-inp{width:100%;background:rgba(6,3,15,.9);border:1px solid rgba(200,168,75,.35);color:var(--parchment);padding:13px 16px;font-family:Georgia,'Times New Roman',serif;font-size:15px;border-radius:4px;outline:none;margin-bottom:12px;text-align:center;letter-spacing:1px}
 .key-inp::placeholder{color:rgba(237,227,208,.3);font-style:italic}
-.key-note{font-size:11.5px;color:rgba(237,227,208,.45);font-style:italic;margin-top:10px;line-height:1.6}
+.key-note{font-size:12px;color:rgba(237,227,208,.45);font-style:italic;margin-top:10px;line-height:1.6}
 .key-err{color:#e07060;font-size:13px;margin-top:8px;display:none}
+
+
+/* GÜNDÜZ MODU */
+body.light {
+  --ink: #f5f0e8;
+  --parchment: #2a1f0e;
+  --gold: #8b6914;
+  --gbright: #6b4f10;
+  --glow: rgba(139,105,20,.15);
+  --silver: #5a5070;
+  --crimson: #8b1a2a;
+  --violet: #4a2a70;
+  --rose: #8b5040;
+  background: #f5f0e8;
+  color: #2a1f0e;
+}
+body.light .cosmos { display: none; }
+body.light .rbox { background: rgba(255,248,235,.9); border-color: rgba(139,105,20,.3); }
+body.light .rbox-body { color: #2a1f0e; }
+body.light .cbox { background: rgba(240,230,210,.8); border-color: rgba(139,105,20,.2); }
+body.light .cbox-body { color: #3a2a10; }
+body.light .cat-btn { background: rgba(245,240,232,.9); border-color: rgba(139,105,20,.25); }
+body.light .cat-btn:hover, body.light .cat-btn.on { background: rgba(139,105,20,.12); }
+body.light .cat-name { color: #6b4f10; }
+body.light .sp-btn { background: rgba(245,240,232,.9); border-color: rgba(139,105,20,.2); }
+body.light .sp-btn:hover, body.light .sp-btn.on { background: rgba(139,105,20,.1); }
+body.light .sp-name { color: #6b4f10; }
+body.light .sp-desc { color: rgba(42,31,14,.7); }
+body.light .intent-box { background: rgba(240,230,210,.7); border-color: rgba(139,105,20,.2); }
+body.light .intent-txt { color: rgba(42,31,14,.9); }
+body.light .q-ta { background: rgba(255,252,245,.9); border-color: rgba(139,105,20,.3); color: #2a1f0e; }
+body.light .q-guide { background: rgba(240,230,210,.6); color: rgba(42,31,14,.85); }
+body.light .q-ex { background: rgba(245,240,232,.8); border-color: rgba(139,105,20,.3); color: rgba(42,31,14,.8); }
+body.light .q-ex:hover { background: rgba(139,105,20,.1); color: #2a1f0e; }
+body.light .share-box, body.light .fb-box { background: rgba(245,240,232,.8); border-color: rgba(139,105,20,.2); }
+body.light .sbtn { border-color: rgba(139,105,20,.4); color: rgba(42,31,14,.85); }
+body.light .sbtn:hover { border-color: var(--gold); background: rgba(139,105,20,.08); }
+body.light .fb-ta { background: rgba(255,252,245,.9); border-color: rgba(139,105,20,.2); color: #2a1f0e; }
+body.light .abtn { border-color: rgba(139,105,20,.4); color: rgba(42,31,14,.85); }
+body.light .abtn:hover { border-color: var(--gold); background: rgba(139,105,20,.06); }
+body.light .btn-back { border-color: rgba(139,105,20,.2); color: rgba(42,31,14,.65); }
+body.light .cb { background: linear-gradient(160deg,#f0e8d5,#e8dcc8); border-color: var(--gold); }
+body.light .cnm { color: #6b4f10; }
+body.light .cpos { color: rgba(42,31,14,.55); }
+body.light .daily-msg { color: rgba(42,31,14,.65); }
+body.light .title-main { color: #6b4f10; }
+body.light .title-sub { color: #5a5070; }
+body.light .sdot { border-color: rgba(139,105,20,.3); color: rgba(42,31,14,.55); }
+body.light .sdot.on { border-color: var(--gold); color: #6b4f10; background: rgba(139,105,20,.1); }
+body.light .sdot.done { border-color: rgba(139,105,20,.45); color: var(--gold); }
+body.light .sline { background: rgba(139,105,20,.15); }
+body.light .ptitle { color: #6b4f10; }
+body.light footer { color: rgba(42,31,14,.45); }
+body.light .disclaimer { color: rgba(42,31,14,.65); }
+body.light .ymod-btn { background: rgba(245,240,232,.8); border-color: rgba(139,105,20,.2); }
+body.light .ymod-btn.on { border-color: rgba(139,105,20,.6); background: rgba(139,105,20,.1); }
+body.light .ymod-name { color: #6b4f10; }
+body.light .ymod-desc { color: rgba(42,31,14,.6); }
+body.light .lbtn { background: rgba(245,240,232,.85); border-color: rgba(139,105,20,.25); color: rgba(42,31,14,.45); }
+body.light .lbtn.on { border-color: var(--gold); color: #6b4f10; background: rgba(139,105,20,.1); }
+body.light .welcome-msg { color: #2a1f0e; }
+body.light .name-inp { background: rgba(255,252,245,.9); border-color: rgba(139,105,20,.3); color: #2a1f0e; }
+body.light .key-box { background: rgba(245,240,232,.95); border-color: rgba(139,105,20,.4); }
+body.light .key-desc { color: rgba(42,31,14,.82); }
+body.light .key-inp { background: rgba(255,252,245,.9); border-color: rgba(139,105,20,.35); color: #2a1f0e; }
+body.light .key-note { color: rgba(42,31,14,.5); }
+body.light .limit-box { background: rgba(245,240,232,.95); border-color: rgba(139,105,20,.3); }
+body.light .limit-msg { color: rgba(42,31,14,.78); }
+body.light .rbox-title { color: #6b4f10; }
+body.light .rbox.rose .rbox-title { color: #8b5040; }
+body.light .rbox.violet .rbox-title { color: #4a2a70; }
+
+/* MOD BUTONU */
+.mode-btn {
+  background: rgba(8,4,18,.85);
+  border: 1px solid rgba(200,168,75,.25);
+  color: rgba(237,227,208,.7);
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .25s;
+  border-radius: 4px;
+  line-height: 1;
+}
+.mode-btn:hover { border-color: var(--gold); color: var(--gbright); }
+body.light .mode-btn {
+  background: rgba(245,240,232,.85);
+  border-color: rgba(139,105,20,.25);
+  color: rgba(42,31,14,.7);
+}
+body.light .mode-btn:hover { border-color: var(--gold); }
 
 @media(max-width:600px){.wrap{padding:18px 14px 70px}.title-main{font-size:22px;letter-spacing:2px}.cat-grid{grid-template-columns:repeat(2,1fr)}.spread-grid{grid-template-columns:repeat(2,1fr)}.rbox-body{font-size:16.5px;line-height:2}.rbox{padding:18px 16px}.cbox{padding:14px 16px}.share-btns{gap:6px}.sbtn{padding:10px 12px;font-size:9.5px}.acts{gap:10px}.abtn{padding:13px 18px}}
 </style>
@@ -152,6 +244,7 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 <div class="cosmos"></div>
 <canvas id="shareCanvas" width="800" height="500"></canvas>
 <div class="lang-bar">
+  <button class="mode-btn" id="modeBtn" onclick="toggleMode()" title="Gece/Gündüz">🌙</button>
   <button class="lbtn on" onclick="setLang('tr')">TR</button>
   <button class="lbtn" onclick="setLang('en')">EN</button>
 </div>
@@ -271,7 +364,7 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
   <div class="limit-box">
     <div class="limit-owl">🦉</div>
     <div class="limit-title" id="limitTitle">Günlük Hakkın Doldu</div>
-    <div class="limit-msg" id="limitMsg">Bugün 3 açılım yaptın.<br>Kartlar yarın tekrar seninle konuşmaya hazır.</div>
+    <div class="limit-msg" id="limitMsg">Bugün 6 açılım hakkını kullandın.<br>Kartlar yarın tekrar seninle konuşmaya hazır.</div>
     <div class="limit-sub" id="limitSub">Gece yarısından sonra yenilenecek.</div>
   </div>
 </div>
@@ -640,12 +733,14 @@ async function callClaude(sysprompt, userprompt){
     headers: {"Content-Type":"application/json","Authorization":"Bearer "+key},
     body: JSON.stringify({
       model: "gpt-4o-mini",
-      max_tokens: 1000,
+      max_tokens: 1200,
       messages: [{role:"system",content:sysprompt},{role:"user",content:userprompt}]
     })
   });
-  const data = await response.json();
-  if(!response.ok) throw new Error(data.error?.message || response.status);
+  const text = await response.text();
+  let data;
+  try{ data = JSON.parse(text); }catch(e){ throw new Error('Sunucu hatası'); }
+  if(!response.ok) throw new Error(data.error?.message || 'HTTP '+response.status);
   return data.choices[0].message.content;
 }
 
@@ -659,78 +754,81 @@ async function interpret(){
   // Yorum modunu belirle (yorumMod değişkeni step3'te set edilir)
   const kartAnlatimi = (typeof yorumMod !== 'undefined') ? yorumMod : 'kartli';
 
-  // Konuya ve kartlara göre tonu otomatik belirle
   function detectTone(cat, cards, q) {
     const heavyCards = ['m13','m15','m16','m12','m9','s9','s10','s3','s5','p5'];
     const hasHeavy = cards.some(c => heavyCards.includes(c.id));
-    const loveTopics = ['love','aşk','sevgi','ilişki','sevgili','partner','evlilik'];
-    const funTopics = ['eğlence','parti','tatil','arkadaş','hobi'];
-    const seriousTopics = ['sağlık','iş','para','hastalık','kariyer','hukuk','borç'];
-    
     const qLower = (q||'').toLowerCase();
-    const isLove = cat==='love' || loveTopics.some(t=>qLower.includes(t));
-    const isFun = funTopics.some(t=>qLower.includes(t));
-    const isSerious = cat==='health' || cat==='work' || cat==='money' || seriousTopics.some(t=>qLower.includes(t));
-    
+    const isLove = cat==='love' || ['sevgi','ilişki','sevgili','partner','evlilik','aşk'].some(t=>qLower.includes(t));
+    const isFun = ['eğlence','parti','tatil','arkadaş','hobi','neşe'].some(t=>qLower.includes(t));
+    const isSerious = cat==='health' || cat==='work' || cat==='money' || ['sağlık','iş','para','hastalık','kariyer','borç'].some(t=>qLower.includes(t));
     if(hasHeavy && isSerious) return 'sefkatli';
     if(hasHeavy) return 'destekleyici';
-    if(isLove) return 'sicak_neseli';
-    if(isFun) return 'hafif_neseli';
+    if(isLove) return 'sicak';
+    if(isFun) return 'neseli';
     if(isSerious) return 'analitik';
     return 'dengeli';
   }
-  
+
   const ton = detectTone(cat, cards, q);
-  
-  const tonDesc = {
-    'sefkatli': 'Şefkatli, anlayışlı ve destekleyici. Zor bir dönemden geçen birine nazikçe konuş. Sert gerçekleri yumuşakla, umut ver.',
-    'destekleyici': 'Destekleyici ama dürüst. Zorluğu kabul et ama güçlü yönlere odaklan.',
-    'sicak_neseli': 'Sıcak, neşeli, hafif romantik. Aşk konusunda uçuşan ama yere basan bir ton. Bazen güzel bir metafor kullan.',
-    'hafif_neseli': 'Hafif, esprili, pozitif. Hayatın güzel tarafını göster. Gerekirse şakacı ol ama boş olmadan.',
-    'analitik': 'Net, pratik, analitik. Soyut yerine somut bak. İş/kariyer/para konularında gerçekçi ol.',
-    'dengeli': 'Dengeli, akıcı, günlük dilde. Ne çok ağır ne çok hafif.'
+  const tonTR = {
+    'sefkatli':'Şefkatli ve anlayışlı. Zor kartlar çıkmış, nazikçe konuş. Acıyı kabul et ama umut ver. Hiç yargılama.',
+    'destekleyici':'Destekleyici ve dürüst. Zorluğu kabul et, güçlü yönlere odaklan.',
+    'sicak':'Sıcak, neşeli, biraz romantik. Aşk enerjisini hisset. Güzel metaforlar kullan.',
+    'neseli':'Hafif, esprili, pozitif. Hayatın iyi tarafı. Gerekirse şakacı ol ama boş olmadan.',
+    'analitik':'Net ve pratik. Somut bak. Gerçekçi ol.',
+    'dengeli':'Dengeli ve akıcı. Ne çok ağır ne çok hafif.'
+  }[ton];
+  const tonEN = {
+    'sefkatli':'Compassionate and understanding. Heavy cards appeared, be gentle. Acknowledge pain but give hope.',
+    'destekleyici':'Supportive and honest. Acknowledge challenge, focus on strengths.',
+    'sicak':'Warm, playful, slightly romantic. Feel the love energy. Use beautiful metaphors.',
+    'neseli':'Light, witty, positive. Good side of life. Be fun but not empty.',
+    'analitik':'Clear and practical. Be concrete and realistic.',
+    'dengeli':'Balanced and flowing. Not too heavy, not too light.'
   }[ton];
 
-  const kartAciklamaKural = kartAnlatimi === 'saf'
-    ? 'Kart isimlerini HİÇ söyleme. Açılımdaki kartları belirtme. Sadece saf, akıcı bir yorum yap — sanki sezgiyle görüyormuşsun gibi. Kartların enerjisini yoruma yansıt ama adlarını kullanma.'
-    : 'Gerektiğinde kart isimlerini doğal bir şekilde kullanabilirsin ama teknik bilgiye girme. "X kartı gelmiş" yerine "X burada şunu söylüyor..." gibi akıcı kullan.';
+  const kartKuralTR = kartAnlatimi==='saf'
+    ? 'Kart isimlerini HİÇ söyleme. Saf sezgisel yorum yap, sanki enerjiyi doğrudan hissediyorsun.'
+    : 'Kart isimlerini gerektiğinde doğal akışta kullanabilirsin ama teknik bilgiye girme.';
+  const kartKuralEN = kartAnlatimi==='saf'
+    ? 'NEVER mention card names. Give a pure intuitive reading as if sensing energy directly.'
+    : 'You may mention card names naturally but avoid being technical.';
 
   const sysprompt = lang==='tr'
-    ? `Sen Baykuş Tarot'sun. Derin tarot bilgisine sahip, yaratıcı, özgün ve sıcak bir rehbersin.
+    ? `Sen Baykuş Tarot'sun. Derin bilgiye sahip, yaratıcı ve sıcak bir tarot rehberisin.
 
-TON: ${tonDesc}
+TON: ${tonTR}
+KART KURALI: ${kartKuralTR}
+DİL: Günümüz Türkçesi, doğal konuşma. Teknik değil, samimi. Özgün metaforlar kullan.
 
-KART AÇIKLAMA KURALI: ${kartAciklamaKural}
+REFERANS (arka planda kullan, hiç söyleme):
+[Metin Kiraz] Planet-kart: Serseri=Uranüs(özgürlük), Büyücü=Merkür(zeka/iletişim), Yüce Rahibe=Ay(sezgi/bilinçdışı), İmparatoriçe=Venüs(bereket/sevgi), İmparator=Mars(güç/otorite), Hiyerofant=Boğa(gelenek), Aşıklar=İkizler/Venüs(seçim/ilişki), Savaş Arabası=Yengeç(kontrol/zafer), Güç=Aslan(cesaret/şefkat), Ermiş=Başak(bilgelik/yalnızlık), Kader Çarkı=Jüpiter(değişim/şans), Adalet=Terazi(denge/hak), Asılan Adam=Neptün(feda/bekleyiş), Ölüm=Akrep/Plüton(dönüşüm), Denge=Yay(uyum/sabır), Şeytan=Oğlak/Satürn(bağımlılık), Kule=Mars(yıkım/uyanış), Yıldız=Kova(umut/şifa), Ay=Balık(yanılsama/korku), Güneş=Güneş(başarı/mutluluk), Yargı=Plüton(uyanış), Dünya=Satürn(tamamlanma). Kupalar=Su/duygu, Kılıçlar=Hava/zihin, Asalar=Ateş/enerji, Tılsımlar=Toprak/madde. Sayılar: 1=başlangıç, 2=seçim, 3=büyüme, 4=yapı, 5=zorluk, 6=uyum, 7=içe bakış, 8=güç, 9=tamamlanma, 10=döngü sonu.
+[Wiggan] Modern pratik bakış. Güç=zorlamadan değiştirme gücü. Ermiş=içe çekilip cevap arama. Her kartın aşk/kariyer/kişisel boyutu var. Ters kartlar: zorlamak, kaçınmak, gücü kullanmamak.
+[Jodorowsky] Marseille sistemi. 1=potansiyel/tohum, 10=tam açılım. Sayılar yaşayan varlıklar. Kartlar ruhsal büyüme yolculuğu.
+[Nichols/Jung] Arketip analizi. Serseri=Puer Aeternus(sonsuz genç), Büyücü=bilinç-bilinçdışı köprüsü, Ermiş=içsel bilge. Kartlar kolektif bilinçdışının figürleri. Senkronisite: kartlar tesadüf değil, ruhun mesajları.
+[Waite] Orijinal sembolizm. Denge=iki kâse arasında akan hayat özü, bir ayak toprakta bir ayak suda. Şeytan=zincirleri gevşek, aslında özgür ama farkında değil. Kule=yanlış temeller üstündeki yapının çöküşü.
+[Banzhaf] Kahramanın yolculuğu. 0=cennet/başlangıç, I-VII=bilinç gelişimi, VIII-XIV=dönüşüm, XV-XXI=bütünleşme. Her kart bir yaşam dersi.
+[Connolly] Pratik anlamlar. Aslar=yeni enerji kapısı, 2ler=ortaklık/seçim, 3ler=işbirliği, 4ler=istikrar, 5ler=zorluk/değişim, 6lar=uyum, 7ler=strateji/sınama, 8ler=hız veya sabır, 9lar=neredeyse tamam, 10lar=döngü sonu. Saray: Papaç=öğrenen, Prens=eylem, Kraliçe=içsel güç, Kral=olgun otorite.
+[Crowley/Banzhaf] Enerji titreşimleri. Her kart bir güç akışı. Ters kartlar bloke enerji veya içe dönmüş güç.
 
-DİL: Günümüz Türkçesi, doğal konuşma dili. "Belki hayatının bu döneminde..." değil "Şu an işler biraz karışık görünüyor" tarzı. Akıcı, samimi, teknik değil.
+Verilen formata kesinlikle uy. Sadece format çıktısı ver.`
+    : `You are Baykuş Tarot — creative, warm, deeply knowledgeable tarot guide.
 
-YARATICILIK: Her yorumu özgün yap. Aynı kalıpları tekrarlama. Metafor, benzetme, günlük hayattan örnekler kullanabilirsin.
+TONE: ${tonEN}
+CARD RULE: ${kartKuralEN}
+LANGUAGE: Natural modern English. Conversational, creative metaphors welcome.
 
-REFERANS SİSTEMİ (arka planda kullan, kullanıcıya söyleme):
-[Metin Kiraz - Taroloji] Türk astroloji geleneği. Planet-kart eşleşmeleri: Serseri=Uranüs(özgürlük,beklenmedik), Büyücü=Merkür(iletişim,zeka), Yüce Rahibe=Ay(sezgi,bilinçdışı), İmparatoriçe=Venüs(bereket,sevgi), İmparator=Mars/Koç(güç,otorite), Hiyerofant=Boğa(gelenek,yapı), Aşıklar=İkizler/Venüs(seçim,ilişki), Savaş Arabası=Yengeç/Ay(kontrol,zafer), Güç=Aslan/Güneş(cesaret,şefkat), Ermiş=Başak/Merkür(bilgelik,yalnızlık), Kader Çarkı=Jüpiter(değişim,şans), Adalet=Terazi/Venüs(denge,hak), Asılan Adam=Neptün/Su(feda,bekleyiş), Ölüm=Akrep/Plüton(dönüşüm), Denge=Yay/Jüpiter(uyum,sabır), Şeytan=Oğlak/Satürn(bağımlılık,madde), Kule=Mars(yıkım,uyanış), Yıldız=Kova/Uranüs(umut,şifa), Ay=Balık/Neptün(yanılsama,korku), Güneş=Güneş(başarı,mutluluk), Yargı=Plüton(uyanış,çağrı), Dünya=Satürn(tamamlanma). Minor: Kupalar=Su/duygular, Kılıçlar=Hava/zihin, Asalar=Ateş/enerji, Tılsımlar=Toprak/madde. Sayılar: 1=başlangıç, 2=seçim/denge, 3=büyüme, 4=yapı, 5=değişim/zorluk, 6=uyum, 7=içe bakış, 8=güç, 9=tamamlanma, 10=döngü sonu.
-[Eileen Connolly] Her kartın pratik yaşam anlamı. Aslar=yeni başlangıç enerjisi, İkililer=seçim ve ortaklık, Üçlüler=işbirliği ve büyüme, Dörtlüler=istikrar, Beşliler=zorluk ve değişim, Altılılar=uyum ve denge, Yedililer=strateji ve sınama, Sekizliler=hız veya sabır, Dokuzlular=neredeyse tamam, Onlular=döngü sonu. Saray kartları: Papaç=genç/öğrenen enerji, Prens/Şövalye=aksiyon ve hareket, Kraliçe=içsel güç ve sezgi, Kral=olgun otorite.
-[Samael Aun Weor - Kabbalah] Major Arcana'nın mistik boyutu. Her kart evrensel bir arketip. Serseri=sonsuz potansiyel (0), Büyücü=yaratıcı irade (1), Yüce Rahibe=gizem ve sezgi (2), İmparatoriçe=yaratıcı bereket (3), İmparator=somut güç (4), Kule=eski yapıların çöküşü ve özgürleşme (16), Ölüm=bir formun sona erip yenisinin doğması (13).
-[Wicca & Numeroloji] Element enerjileri ve sayı titreşimleri. Ateş kartları (Asalar)=tutku ve aksiyon, Su kartları (Kupalar)=duygu ve sezgi, Hava kartları (Kılıçlar)=düşünce ve iletişim, Toprak kartları (Tılsımlar)=pratik ve madde. Ay döngüleri ve doğal ritimler.
+REFERENCE (use internally, never mention sources):
+[Metin Kiraz] Planet-card links: Fool=Uranus(freedom), Magician=Mercury(intellect/communication), High Priestess=Moon(intuition/unconscious), Empress=Venus(abundance/love), Emperor=Mars(power/authority), Hierophant=Taurus(tradition), Lovers=Gemini/Venus(choice/relationship), Chariot=Cancer(control/victory), Strength=Leo(courage/compassion), Hermit=Virgo(wisdom/solitude), Wheel=Jupiter(change/luck), Justice=Libra(balance), Hanged Man=Neptune(surrender/waiting), Death=Scorpio/Pluto(transformation), Temperance=Sagittarius(harmony/patience), Devil=Capricorn/Saturn(addiction), Tower=Mars(disruption/awakening), Star=Aquarius(hope/healing), Moon=Pisces(illusion/fear), Sun=Sun(success/joy), Judgement=Pluto(awakening), World=Saturn(completion). Cups=Water/emotion, Swords=Air/mind, Wands=Fire/energy, Pentacles=Earth/material.
+[Wiggan] Strength=power to create change without forcing. Hermit=searching for inner answers. Each card has love/career/personal dimension. Reversed=forcing, avoiding, not stepping into power.
+[Jodorowsky] 1=potential/seed, 10=full bloom. Numbers as living entities. Cards as spiritual growth journey.
+[Nichols/Jung] Fool=Puer Aeternus, Magician=bridge between conscious and unconscious, Hermit=inner wise man. Cards are figures of collective unconscious. Synchronicity: cards are not random, they are soul messages.
+[Waite] Temperance=life essence flowing between two cups, one foot on earth one on water. Devil=chains are loose, actually free but unaware. Tower=collapse of structures built on false foundations.
+[Banzhaf] Hero's journey. 0=paradise/beginning, I-VII=consciousness development, VIII-XIV=transformation, XV-XXI=integration.
+[Connolly] Aces=new energy doorway, 2s=partnership/choice, 3s=cooperation, 4s=stability, 5s=challenge/change, 6s=harmony, 7s=strategy/testing, 8s=speed or patience, 9s=almost complete, 10s=cycle end. Court: Page=learning, Knight=action, Queen=inner power, King=mature authority.
+[Crowley/Banzhaf] Energy vibrations. Each card a flow of power. Reversed=blocked or turned inward energy.
 
-YORUM KURALLARI:
-- Hiç teknik terim veya referans adı söyleme (Connolly dedi, Kabbalah göre vb. YOK)
-- Yorumlar özgün ve yaratıcı olsun, kalıp cümle yok
-- Verilen formata kesinlikle uy, sadece format çıktısı ver`
-    : `You are Baykuş Tarot — a creative, warm, and insightful guide with deep knowledge.
-
-TONE: ${tonDesc.replace('Şefkatli','Compassionate').replace('sefkatli','compassionate').replace('destekleyici','supportive').replace('sicak_neseli','warm and playful').replace('hafif_neseli','light and fun').replace('analitik','analytical').replace('dengeli','balanced')}
-
-CARD NAMING RULE: ${kartAnlatimi === 'saf' ? 'Never mention card names. Give a pure, flowing intuitive reading as if you are sensing the energy directly.' : 'You may mention card names naturally when it flows, but avoid being technical. Use them conversationally.'}
-
-LANGUAGE: Natural, modern English. Conversational, not academic. Creative metaphors welcome.
-
-REFERENCE SYSTEM (use internally, never mention sources):
-[Astrology] Planet-card links: Fool=Uranus(freedom,surprise), Magician=Mercury(communication,skill), High Priestess=Moon(intuition,mystery), Empress=Venus(abundance,love), Emperor=Mars/Aries(power,authority), Hierophant=Taurus(tradition,structure), Lovers=Gemini/Venus(choice,relationship), Chariot=Cancer/Moon(control,victory), Strength=Leo/Sun(courage,compassion), Hermit=Virgo/Mercury(wisdom,solitude), Wheel=Jupiter(change,luck), Justice=Libra/Venus(balance,fairness), Hanged Man=Neptune/Water(surrender,waiting), Death=Scorpio/Pluto(transformation), Temperance=Sagittarius/Jupiter(harmony,patience), Devil=Capricorn/Saturn(addiction,material), Tower=Mars(disruption,awakening), Star=Aquarius/Uranus(hope,healing), Moon=Pisces/Neptune(illusion,fear), Sun=Sun(success,joy), Judgement=Pluto(awakening,calling), World=Saturn(completion). Minor: Cups=Water/emotions, Swords=Air/mind, Wands=Fire/energy, Pentacles=Earth/material.
-[Connolly] Practical life meanings. Aces=new beginning energy, Twos=choice and partnership, Threes=cooperation and growth, Fours=stability, Fives=challenge and change, Sixes=harmony, Sevens=strategy and testing, Eights=speed or patience, Nines=almost complete, Tens=cycle end. Court: Page=young/learning, Knight=action and movement, Queen=inner strength and intuition, King=mature authority.
-[Kabbalah] Mystical dimension. Each Major Arcana card is a universal archetype and soul lesson.
-[Numerology] Number vibrations: 1=initiation, 2=choice, 3=growth, 4=structure, 5=change, 6=harmony, 7=introspection, 8=power, 9=completion, 10=cycle end.
-
-RULES: Never mention source names. Be creative and original. Follow the format exactly.`;
+Follow the format exactly. Output only the formatted response.`;
 
   const prompt = lang==='tr'
     ? isDaily
@@ -777,9 +875,27 @@ async function loadDaily(){
   }catch{el.innerHTML=lang==='tr'?'<em>"Kartlar seni bekliyor — önce niyetin netleşsin."</em>':'<em>"The cards await — let your intention become clear."</em>';}
 }
 
+const DAILY_LIMIT = 15;
 function getTodayKey(){ return 'bk_limit_' + new Date().toDateString() + '_' + (uName||'guest'); }
-async function checkLimit(){ return true; }
-async function incrementLimit(){}
+
+async function checkLimit(){
+  const k = getTodayKey();
+  let count = 0;
+  try{ const s = await sGet(k); count = s||0; }catch(e){ count = parseInt(localStorage.getItem(k)||'0'); }
+  if(count >= DAILY_LIMIT){
+    document.getElementById('limitScreen').style.display = 'flex';
+    return false;
+  }
+  return true;
+}
+
+async function incrementLimit(){
+  const k = getTodayKey();
+  let count = 0;
+  try{ const s = await sGet(k); count = (s||0)+1; await sSet(k,count); }catch(e){}
+  localStorage.setItem(k, (parseInt(localStorage.getItem(k)||'0')+1).toString());
+}
+
 
 function saveKey(){
   const inp = document.getElementById('keyInp').value.trim();
@@ -795,8 +911,26 @@ function saveKey(){
   init();
 }
 
-window.addEventListener('load',init);
+
+let isDayMode = false;
+function toggleMode(){
+  isDayMode = !isDayMode;
+  document.body.classList.toggle('light', isDayMode);
+  document.getElementById('modeBtn').textContent = isDayMode ? '🌙' : '☀️';
+  try{ localStorage.setItem('bk_mode', isDayMode?'light':'dark'); }catch(e){}
+}
+function initMode(){
+  try{
+    const saved = localStorage.getItem('bk_mode');
+    if(saved === 'light'){ isDayMode = true; document.body.classList.add('light'); document.getElementById('modeBtn').textContent = '🌙'; }
+  }catch(e){}
+}
+
+window.addEventListener('load', function(){ initMode(); init(); });
 </script>
+
+
+
 
 <!-- API KEY SCREEN -->
 <div class="key-screen" id="keyScreen">
@@ -808,7 +942,7 @@ window.addEventListener('load',init);
            onkeydown="if(event.key==='Enter')saveKey()">
     <button class="btn-go" style="width:100%;margin-top:4px" onclick="saveKey()">✦ Başla</button>
     <div class="key-err" id="keyErr">Geçersiz key. sk- ile başlamalı.</div>
-    <div class="key-note">Key güvenli olarak cihazınıza kaydedilir.<br>platform.openai.com adresinden alabilirsiniz.</div>
+    <div class="key-note">Key cihazınıza güvenli kaydedilir.<br>platform.openai.com adresinden alabilirsiniz.</div>
   </div>
 </div>
 
