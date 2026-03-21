@@ -154,6 +154,7 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 <div class="cosmos"></div>
 <canvas id="shareCanvas" width="800" height="500"></canvas>
 <div class="lang-bar">
+  <button class="lbtn" onclick="showKeyUpdate()" title="API Key Güncelle" style="font-size:11px;padding:5px 8px">🔑</button>
   <button class="lbtn on" onclick="setLang('tr')">TR</button>
   <button class="lbtn" onclick="setLang('en')">EN</button>
 </div>
@@ -302,19 +303,19 @@ const TR = {
   welcome:'Merhaba. Ben Baykuş.<br>Kartların sesini seninle paylaşmaya hazırım.<br><br><span style="font-size:14px;color:rgba(237,227,208,.48)">Sana nasıl hitap etmemi istersin?</span>',
   nameP:'İsmini yaz…',nameH:'İsmin sadece sana özel deneyim için kullanılır',btnStart:'✦ Başla',
   cats:{
-    daily:{i:'🌅',n:'Günlük Kart',g:'Bugünün enerjisini görmek için soru yazmana gerek yok. Niyetini tut, kartı çek.',e:['Bugün benim için ne var?','Bugünün mesajı nedir?','Bugün neye dikkat etmeliyim?']},
+    daily:{i:'🌅',n:'Sabah Ritüeli',g:'Bugünün enerjisini görmek için soru yazmana gerek yok. Niyetini tut, kartı çek.',e:['Bugün benim için ne var?','Bugünün mesajı nedir?','Bugün neye dikkat etmeliyim?']},
     love:{i:'💫',n:'Aşk & İlişki',g:'Aşk konusunda "karar ver" yerine "benim için ne doğru?" sorun. Kartlar olasılıkları gösterir, karar vermez.',e:['Bu ilişkide benim için ne doğru?','Karşımdaki kişiyle yolum nereye gidiyor?','Kendimi bu ilişkide nasıl ifade edebilirim?']},
     work:{i:'⚡',n:'İş & Kariyer',g:'İş konularında "yapmalı mıyım?" yerine "bu yolda benim için ne var?" sorun.',e:['Bu fırsatta benim için ne var?','Kariyerimde şu an neye odaklanmalıyım?','Bu adımı atmak için hazır mıyım?']},
     health:{i:'🌿',n:'Sağlık & Enerji',g:'Kartlar tıbbi tavsiye vermez. Enerjinizi, motivasyonunuzu sorabilirsiniz.',e:['Şu an enerjimi ne etkiliyor?','Kendime nasıl daha iyi bakabilirim?','Bedenimi ve zihnimde ne dengeye ihtiyacım var?']},
     money:{i:'🌕',n:'Para & Finans',g:'Para konularında "kazanır mıyım?" yerine "bu konuda enerjim nasıl?" sorun.',e:['Maddi durumum için şu an enerji nasıl?','Bu konuda neye dikkat etmeliyim?','Finansal açıdan şu an için doğru adım ne?']},
-    general:{i:'🔮',n:'Genel & Günlük',g:'Genel bir bakış için açık sorular çok etkilidir.',e:['Şu an hayatımda neye dikkat etmeliyim?','Bu dönemde benim için ne önemli?','Bugün hangi enerjiyle ilerlemeliyim?']},
+    general:{i:'🔮',n:'Genel',g:'Genel bir bakış için açık sorular çok etkilidir.',e:['Şu an hayatımda neye dikkat etmeliyim?','Bu dönemde benim için ne önemli?','Bugün hangi enerjiyle ilerlemeliyim?']},
     custom:{i:'✍️',n:'Kendi Sorun',g:'Kendi sorunuzu yazın. En iyi sorular "nasıl", "ne" veya "hangi yönde" şeklinde olanlar.',e:['Bu konuda benim için olasılıklar neler?','Şu an görmediğim ne var?','Bu durumda güçlü yanım ne?']},
   },
   spreads:{
-    s1:{n:'🌅 Günlük',d:'Tek kart · Günün enerjisi'},
-    s3:{n:'🔍 Hızlı Bakış',d:'Geçmiş · Şimdi · Gelecek'},
-    s5:{n:'🌊 Derin Okuma',d:'Beş kart · Kapsamlı'},
-    celtic:{n:'🌀 Tam Okuma',d:'10 kart · En kapsamlı'},
+    s1:{n:'⚡ Tek Kart',d:'Anlık işaret · Hızlı cevap'},
+    s3:{n:'🔍 Anlık Bakış',d:'3 kart · Soru-cevap'},
+    s5:{n:'🔮 Derinlemesine',d:'5 kart · Detaylı okuma'},
+    celtic:{n:'🌀 Tam Analiz',d:'10 kart · Derin analiz'},
   },
 };
 const EN = {
@@ -340,19 +341,19 @@ const EN = {
   welcome:"Hello. I am Baykuş.<br>I am ready to share the voice of the cards with you.<br><br><span style=\"font-size:14px;color:rgba(237,227,208,.48)\">What shall I call you?</span>",
   nameP:'Write your name…',nameH:'Your name is used only for your personal experience',btnStart:'✦ Begin',
   cats:{
-    daily:{i:'🌅',n:'Daily Card',g:'No question needed to see today\'s energy. Set your intention and draw.',e:['What is here for me today?','What is today\'s message?','What should I be aware of today?']},
+    daily:{i:'🌅',n:'Morning Ritual',g:'No question needed to see today\'s energy. Set your intention and draw.',e:['What is here for me today?','What is today\'s message?','What should I be aware of today?']},
     love:{i:'💫',n:'Love & Relationships',g:'Ask about possibilities rather than decisions. "What is right for me?" works better than "Should I?"',e:['What is right for me in this relationship?','Where is this connection leading me?','How can I express myself better here?']},
     work:{i:'⚡',n:'Work & Career',g:'Ask "what is here for me?" rather than "should I do this?" Cards show possibilities.',e:['What is in this opportunity for me?','What should I focus on in my career?','Am I ready to take this step?']},
     health:{i:'🌿',n:'Health & Energy',g:'Cards do not give medical advice. Ask about your energy or sense of wellbeing.',e:['What is affecting my energy right now?','How can I take better care of myself?','What balance do I need in body and mind?']},
     money:{i:'🌕',n:'Money & Finance',g:'Ask "how is my energy around this?" rather than "will I earn?" Cards point to possibilities.',e:['How is the energy around my finances?','What should I pay attention to financially?','What is the right step for me right now?']},
-    general:{i:'🔮',n:'General & Daily',g:'Open questions like "what is important right now?" work well for a general overview.',e:['What should I pay attention to in my life?','What is important for me in this period?','What energy should I move forward with today?']},
+    general:{i:'🔮',n:'General',g:'Open questions like "what is important right now?" work well for a general overview.',e:['What should I pay attention to in my life?','What is important for me in this period?','What energy should I move forward with today?']},
     custom:{i:'✍️',n:'My Own Question',g:'Write your own question. "How", "what" or "which direction" questions work best.',e:['What are the possibilities for me here?','What am I not seeing right now?','What is my strength in this situation?']},
   },
   spreads:{
-    s1:{n:'🌅 Daily',d:'One card · Today\'s energy'},
-    s3:{n:'🔍 Quick Look',d:'Past · Present · Future'},
-    s5:{n:'🌊 Deep Reading',d:'Five cards · Comprehensive'},
-    celtic:{n:'🌀 Full Reading',d:'10 cards · Most comprehensive'},
+    s1:{n:'⚡ Single Card',d:'Quick sign · Fast answer'},
+    s3:{n:'🔍 Quick Read',d:'3 cards · Q&A style'},
+    s5:{n:'🔮 Deep Dive',d:'5 cards · Detailed reading'},
+    celtic:{n:'🌀 Full Analysis',d:'10 cards · Complete reading'},
   },
 };
 const SPOS = {
@@ -693,12 +694,12 @@ async function interpret(){
 
   const ton = detectTone(cat, cards, q);
   const tonTR = {
-    'sefkatli':'Şefkatli ve anlayışlı. Zor kartlar çıkmış, nazikçe konuş. Acıyı kabul et ama umut ver. Hiç yargılama.',
-    'destekleyici':'Destekleyici ve dürüst. Zorluğu kabul et, güçlü yönlere odaklan.',
-    'sicak':'Sıcak, neşeli, biraz romantik. Aşk enerjisini hisset. Güzel metaforlar kullan.',
-    'neseli':'Hafif, esprili, pozitif. Hayatın iyi tarafı. Gerekirse şakacı ol ama boş olmadan.',
-    'analitik':'Net ve pratik. Somut bak. Gerçekçi ol.',
-    'dengeli':'Dengeli ve akıcı. Ne çok ağır ne çok hafif.'
+    'sefkatli':'Samimi ve şefkatli. Zor bir dönemden geçiyor olabilir, bunu hisset. Arkadaşın gibi konuş — ne öğüt ver ne vaaz. Acıyı küçümseme, ama umudu da göster.',
+    'destekleyici':'Dürüst ama sıcak. Zorluğu görmezden gelme, ama güçlü olan yanı da bul. "Sen bunu biliyorsun zaten" enerjisiyle.',
+    'sicak':'Neşeli ve sıcak, hafif uçuşan. Aşk enerjisini hisset — ama yere bas. Ara sıra güldürebilirsin.',
+    'neseli':'Hafif, eğlenceli, pozitif. Hayatın güzel tarafına bak. Espri yapabilirsin ama içi boş olmasın.',
+    'analitik':'Net ve pratik. Soyut değil somut konuş. Gerçekçi ol ama sert olma.',
+    'dengeli':'Samimi ve akıcı. Sanki uzun süredir tanışıyormuşsunuz gibi — ne çok ciddi ne çok hafif.'
   }[ton];
   const tonEN = {
     'sefkatli':'Compassionate and understanding. Heavy cards appeared, be gentle. Acknowledge pain but give hope.',
@@ -721,7 +722,7 @@ async function interpret(){
 
 TON: ${tonTR}
 KART KURALI: ${kartKuralTR}
-DİL: Günümüz Türkçesi, doğal konuşma. Teknik değil, samimi. Özgün metaforlar kullan.
+DİL: Günümüz Türkçesi, samimi arkadaş dili. Teknik değil, doğrudan. Soru sor, düşündür. 'Dur bir saniye', 'aslında', 'bence' gibi günlük ifadeler kullan. Bazen kısa ve güçlü bir cümle, bazen merak uyandıran bir soru. Cevap vermek zorunda değilsin — yansıtmak yeter.
 
 REFERANS (arka planda kullan, hiç söyleme):
 [Metin Kiraz] Planet-kart: Serseri=Uranüs(özgürlük), Büyücü=Merkür(zeka/iletişim), Yüce Rahibe=Ay(sezgi/bilinçdışı), İmparatoriçe=Venüs(bereket/sevgi), İmparator=Mars(güç/otorite), Hiyerofant=Boğa(gelenek), Aşıklar=İkizler/Venüs(seçim/ilişki), Savaş Arabası=Yengeç(kontrol/zafer), Güç=Aslan(cesaret/şefkat), Ermiş=Başak(bilgelik/yalnızlık), Kader Çarkı=Jüpiter(değişim/şans), Adalet=Terazi(denge/hak), Asılan Adam=Neptün(feda/bekleyiş), Ölüm=Akrep/Plüton(dönüşüm), Denge=Yay(uyum/sabır), Şeytan=Oğlak/Satürn(bağımlılık), Kule=Mars(yıkım/uyanış), Yıldız=Kova(umut/şifa), Ay=Balık(yanılsama/korku), Güneş=Güneş(başarı/mutluluk), Yargı=Plüton(uyanış), Dünya=Satürn(tamamlanma). Kupalar=Su/duygu, Kılıçlar=Hava/zihin, Asalar=Ateş/enerji, Tılsımlar=Toprak/madde. Sayılar: 1=başlangıç, 2=seçim, 3=büyüme, 4=yapı, 5=zorluk, 6=uyum, 7=içe bakış, 8=güç, 9=tamamlanma, 10=döngü sonu.
@@ -738,7 +739,7 @@ Verilen formata kesinlikle uy. Sadece format çıktısı ver.`
 
 TONE: ${tonEN}
 CARD RULE: ${kartKuralEN}
-LANGUAGE: Natural modern English. Conversational, creative metaphors welcome.
+LANGUAGE: Natural, direct, like talking to a friend. Not academic. Ask questions, make them think. Short punchy sentences mixed with thoughtful observations. You don't have to give answers — reflecting is enough.
 
 REFERENCE (use internally, never mention sources):
 [Metin Kiraz] Planet-card links: Fool=Uranus(freedom), Magician=Mercury(intellect/communication), High Priestess=Moon(intuition/unconscious), Empress=Venus(abundance/love), Emperor=Mars(power/authority), Hierophant=Taurus(tradition), Lovers=Gemini/Venus(choice/relationship), Chariot=Cancer(control/victory), Strength=Leo(courage/compassion), Hermit=Virgo(wisdom/solitude), Wheel=Jupiter(change/luck), Justice=Libra(balance), Hanged Man=Neptune(surrender/waiting), Death=Scorpio/Pluto(transformation), Temperance=Sagittarius(harmony/patience), Devil=Capricorn/Saturn(addiction), Tower=Mars(disruption/awakening), Star=Aquarius(hope/healing), Moon=Pisces(illusion/fear), Sun=Sun(success/joy), Judgement=Pluto(awakening), World=Saturn(completion). Cups=Water/emotion, Swords=Air/mind, Wands=Fire/energy, Pentacles=Earth/material.
@@ -856,6 +857,38 @@ function restart(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
+
+function rateStar(n){
+  rating = n;
+  document.querySelectorAll('.star').forEach((s, i) => {
+    s.classList.toggle('lit', i < n);
+    s.style.opacity = i < n ? '1' : '0.25';
+    s.style.filter = i < n ? 'none' : 'grayscale(1)';
+    s.style.transform = i < n ? 'scale(1.1)' : 'scale(1)';
+  });
+}
+
+function showKeyUpdate(){
+  const box = document.getElementById('keyUpdateBox');
+  if(box) {
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    document.getElementById('keyUpdateInp').value = '';
+    document.getElementById('keyUpdateErr').style.display = 'none';
+  }
+}
+function saveKeyUpdate(){
+  const inp = document.getElementById('keyUpdateInp').value.trim();
+  const err = document.getElementById('keyUpdateErr');
+  if(!inp.startsWith('sk-')){
+    err.style.display='block';
+    err.textContent='Geçersiz key. sk- ile başlamalı.';
+    return;
+  }
+  localStorage.setItem('bk_apikey', inp);
+  document.getElementById('keyUpdateBox').style.display='none';
+  alert('✓ Key güncellendi!');
+}
+
 window.addEventListener('load',init);
 </script>
 
@@ -873,6 +906,20 @@ window.addEventListener('load',init);
     <button class="btn-go" style="width:100%;margin-top:4px" onclick="saveKey()">✦ Başla</button>
     <div class="key-err" id="keyErr">Geçersiz key. sk- ile başlamalı.</div>
     <div class="key-note">Key cihazınıza güvenli kaydedilir.<br>platform.openai.com adresinden alabilirsiniz.</div>
+  </div>
+</div>
+
+
+<!-- KEY UPDATE BOX -->
+<div id="keyUpdateBox" style="display:none;position:fixed;top:50px;right:14px;z-index:500;background:rgba(12,7,32,.96);border:1px solid rgba(200,168,75,.4);padding:16px;border-radius:8px;width:280px">
+  <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gbright);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">🔑 API Key Güncelle</div>
+  <input id="keyUpdateInp" type="password" placeholder="sk-proj-..." 
+    style="width:100%;background:rgba(6,3,15,.9);border:1px solid rgba(200,168,75,.3);color:var(--parchment);padding:10px;font-family:Merriweather,serif;font-size:13px;border-radius:4px;outline:none;margin-bottom:8px"
+    onkeydown="if(event.key==='Enter')saveKeyUpdate()">
+  <div id="keyUpdateErr" style="display:none;color:#e07060;font-size:12px;margin-bottom:8px"></div>
+  <div style="display:flex;gap:8px">
+    <button onclick="saveKeyUpdate()" style="flex:1;background:linear-gradient(135deg,rgba(122,21,37,.75),rgba(46,18,80,.95));border:1px solid var(--gold);color:var(--gbright);padding:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;cursor:pointer;border-radius:4px;text-transform:uppercase">Kaydet</button>
+    <button onclick="document.getElementById('keyUpdateBox').style.display='none'" style="background:transparent;border:1px solid rgba(200,168,75,.2);color:rgba(237,227,208,.6);padding:8px 12px;font-family:'Cinzel',serif;font-size:10px;cursor:pointer;border-radius:4px">✕</button>
   </div>
 </div>
 
