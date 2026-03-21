@@ -209,7 +209,7 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 
   <div class="panel" id="step3">
     <div class="ptitle" id="s3t">Açılım Seçin ve Niyet Tutun</div>
-    <div class="spread-grid" id="spGrid"></div>
+    <div class="spread-grid" id="spGrid" style="display:none"></div>
     <div class="ymod-row" id="ymodRow">
       <div class="ymod-btn on" id="ymod1" onclick="selYmod('kartli')">
         <div class="ymod-icon">🔮</div>
@@ -574,11 +574,14 @@ function selCat(k){
     document.getElementById('intTxt').textContent=T2.cats.daily.n+': "'+q+'"';
     document.getElementById('intBox').style.display='block';
     document.getElementById('s3note').style.display='block';
+    document.getElementById('spGrid').style.display='none';
     document.getElementById('ymodRow').style.display='flex';
     document.getElementById('btnDraw').style.display='block';
     setTimeout(()=>goStep(3),350);
     return;
   }
+  document.getElementById('spGrid').style.display='grid';
+  document.getElementById('spGrid').style.display='grid';
   document.getElementById('qgt').textContent=T2.qgt;
   document.getElementById('qgb').textContent=c.g;
   document.getElementById('qEx').innerHTML=c.e.map(ex=>'<div class="q-ex" onclick="useEx(this)">'+ex+'</div>').join('');
@@ -838,6 +841,7 @@ function saveKey(){
 function restart(){
   yorumMod='kartli';
   const yr=document.getElementById('ymodRow');if(yr)yr.style.display='none';
+  const sg=document.getElementById('spGrid');if(sg)sg.style.display='grid';
   const ym1=document.getElementById('ymod1');if(ym1)ym1.classList.add('on');
   const ym2=document.getElementById('ymod2');if(ym2)ym2.classList.remove('on');
   cat=null;spread=null;q='';cards=[];rating=0;rTxt='';sTxt='';
