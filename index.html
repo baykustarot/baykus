@@ -782,16 +782,16 @@ Follow the format exactly. Output only the formatted response.`;
   const prompt = lang==='tr'
     ? isDaily
       ? `Kullanıcı adı: ${uName}. Bugünün tarot kartı:\n${cdesc}\n\nGünlük kart yorumu yaz. ${uName} ismini 1-2 kez kullan. Sabah enerjisi, güne hazırlık tonu. Kartın astroloji ve numeroloji bağlamını ince bir dokunuş olarak ekle.\n\nTAM OLARAK bu formatta ver:\nYORUM: [180-220 kelime günlük yorum. Kartın enerjisini bugüne yansıt.]\n---\nÖZET: [Tek cümle. "Bugün seni..." ile başla.]\n---\nNİYET: [Tek niyet cümlesi. "Bugün ben..." ile başla.]`
-      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [220-280 kelime yorum. Soruya direkt cevap ver. Her kartı pozisyonu ve soruyla bağdaştır.]\n---\nÖZET: [Tek güçlü cümle.]\n---\nADIM: [1-2 somut adım. "Belki..." ile başla.]`
+      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [Yayılım türüne göre: 1 kart=7-8 cümle, 3 kart=10-12 cümle, 5 kart=15-17 cümle, 10 kart=22-25 cümle. Yorum derinlik gerektiriyorsa 3-4 cümle fazla yazabilirsin. Soruya direkt cevap ver. Her kartı soruyla bağdaştır.]\n---\nÖZET: [Tek güçlü cümle.]\n---\nADIM: [1-2 somut adım. "Belki..." ile başla.]`
     : isDaily
-      ? `User: ${uName}. Today's card:\n${cdesc}\n\nWrite a daily reading. Use ${uName}'s name 1-2 times. Morning energy, motivating tone. Add subtle astrological/numerological context.\n\nReply in EXACTLY this format:\nREADING: [180-220 word daily reading. Reflect card energy onto the day.]\n---\nSUMMARY: [One sentence. Start with "Today..."]\n---\nINTENTION: [One intention. Start with "Today I..."]`
-      : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}\n\nCards:\n${cdesc}\n\nWrite a tarot reading. Use ${uName}'s name 1-2 times. Use symbolic depth of each card and position meaning. Add subtle astrology/numerology. Match tone to question type.\n\nReply in EXACTLY this format:\nREADING: [220-280 word reading. Answer directly. Connect each card to question and position.]\n---\nSUMMARY: [One powerful sentence.]\n---\nSTEP: [1-2 concrete steps. Start with "Perhaps..."]`;
+      ? `User: ${uName}. Today's card:\n${cdesc}\n\nWrite a daily reading. Use ${uName}'s name 1-2 times. Morning energy, motivating tone. Add subtle astrological/numerological context.\n\nReply in EXACTLY this format:\nREADING: [5-6 sentences. Up to 8 if depth requires it. Short, powerful, energizing for the day.]\n---\nSUMMARY: [One sentence. Start with "Today..."]\n---\nINTENTION: [One intention. Start with "Today I..."]`
+      : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}\n\nCards:\n${cdesc}\n\nWrite a tarot reading. Use ${uName}'s name 1-2 times. Use symbolic depth of each card and position meaning. Add subtle astrology/numerology. Match tone to question type.\n\nReply in EXACTLY this format:\nREADING: [By spread: 1 card=7-8 sentences, 3 cards=10-12 sentences, 5 cards=15-17 sentences, 10 cards=22-25 sentences. You may write 3-4 extra sentences if the reading requires more depth. Answer directly. Connect each card to the question.]\n---\nSUMMARY: [One powerful sentence.]\n---\nSTEP: [1-2 concrete steps. Start with "Perhaps..."]`;
 
   try{
     // Token limits by spread type
-    const tokenMap = {s1: 400, s3: 600, s5: 900, celtic: 1400};
+    const tokenMap = {s1: 550, s3: 800, s5: 1100, celtic: 1600};
     const isDaily = (cat==='daily');
-    const maxTok = isDaily ? 400 : (tokenMap[spread] || 600);
+    const maxTok = isDaily ? 500 : (tokenMap[spread] || 600);
     const raw = await callClaude(sysprompt, prompt, maxTok);
     const parts=raw.split('---').map(s=>s.trim());
     const rk=lang==='tr'?'YORUM:':'READING:',sk=lang==='tr'?'ÖZET:':'SUMMARY:';
