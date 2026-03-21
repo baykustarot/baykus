@@ -789,9 +789,9 @@ Follow the format exactly. Output only the formatted response.`;
 
   try{
     // Token limits by spread type
-    const tokenMap = {s1: 200, s3: 550, s5: 750, celtic: 800};
+    const tokenMap = {s1: 300, s3: 700, s5: 1000, celtic: 1400};
     const isDaily = (cat==='daily');
-    const maxTok = isDaily ? 120 : (tokenMap[spread] || 200);
+    const maxTok = isDaily ? 150 : (tokenMap[spread] || 300);
     const raw = await callClaude(sysprompt, prompt, maxTok);
     const parts=raw.split('---').map(s=>s.trim());
     const rk=lang==='tr'?'YORUM:':'READING:',sk=lang==='tr'?'ÖZET:':'SUMMARY:';
