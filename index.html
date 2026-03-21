@@ -640,7 +640,7 @@ async function drawCards(){
 
 let activeModel = 'gpt-4o';
 
-async function callOpenAI(model, key, sysprompt, userprompt){
+async function callOpenAI(model, key, sysprompt, userprompt, maxTokens){
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
   try{
@@ -650,7 +650,7 @@ async function callOpenAI(model, key, sysprompt, userprompt){
       signal: controller.signal,
       body: JSON.stringify({
         model: model,
-        max_tokens: 800,
+        max_tokens: maxTokens||800,
         messages: [{role:"system",content:sysprompt},{role:"user",content:userprompt}]
       })
     });
@@ -668,13 +668,13 @@ async function callOpenAI(model, key, sysprompt, userprompt){
   }
 }
 
-async function callClaude(sysprompt, userprompt){
+async function callClaude(sysprompt, userprompt, maxTokens){
   const key = localStorage.getItem('bk_apikey')||'';
   if(!key){ document.getElementById('keyScreen').style.display='flex'; throw new Error('key yok'); }
   
   // Önce gpt-4o dene, hata alırsa mini'ye geç
   try{
-    const result = await callOpenAI('gpt-4o', key, sysprompt, userprompt);
+    const result = await callOpenAI('gpt-4o', key, sysprompt, userprompt, maxTokens);
     activeModel = 'gpt-4o';
     return result;
   } catch(e){
@@ -682,7 +682,7 @@ async function callClaude(sysprompt, userprompt){
     if(e.message && (e.message.includes('insufficient') || e.message.includes('quota') || 
        e.message.includes('429') || e.message.includes('402') || e.message.includes('billing'))){
       try{
-        const result = await callOpenAI('gpt-4o-mini', key, sysprompt, userprompt);
+        const result = await callOpenAI('gpt-4o-mini', key, sysprompt, userprompt, maxTokens);
         activeModel = 'gpt-4o-mini';
         return result;
       } catch(e2){
@@ -788,7 +788,11 @@ Follow the format exactly. Output only the formatted response.`;
       : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}\n\nCards:\n${cdesc}\n\nWrite a tarot reading. Use ${uName}'s name 1-2 times. Use symbolic depth of each card and position meaning. Add subtle astrology/numerology. Match tone to question type.\n\nReply in EXACTLY this format:\nREADING: [220-280 word reading. Answer directly. Connect each card to question and position.]\n---\nSUMMARY: [One powerful sentence.]\n---\nSTEP: [1-2 concrete steps. Start with "Perhaps..."]`;
 
   try{
-    const raw = await callClaude(sysprompt, prompt);
+    // Token limits by spread type
+    const tokenMap = {s1: 400, s3: 600, s5: 900, celtic: 1400};
+    const isDaily = (cat==='daily');
+    const maxTok = isDaily ? 400 : (tokenMap[spread] || 600);
+    const raw = await callClaude(sysprompt, prompt, maxTok);
     const parts=raw.split('---').map(s=>s.trim());
     const rk=lang==='tr'?'YORUM:':'READING:',sk=lang==='tr'?'ÖZET:':'SUMMARY:';
     const ak=isDaily?(lang==='tr'?'NİYET:':'INTENTION:'):(lang==='tr'?'ADIM:':'STEP:');
