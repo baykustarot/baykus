@@ -8,14 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Cinzel:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#07040e;--parchment:#ede3d0;
+  --ink:#100a02;--parchment:#ede3d0;
   --gold:#c8a84b;--gbright:#e8cc7a;--glow:rgba(200,168,75,.18);
   --silver:#b8b4cc;--crimson:#7a1525;--violet:#2e1250;--rose:#b87060;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--parchment);font-family:Merriweather,Georgia,serif;font-size:17px;line-height:1.85;min-height:100vh;overflow-x:hidden}
-.cosmos{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 20% 40%,#150830 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 65%,#0a0420 0%,transparent 55%),radial-gradient(ellipse 100% 100% at 50% 0%,#0a0418 0%,#060310 100%)}
+.cosmos{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 20% 40%,#150a02 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 65%,#0a0600 0%,transparent 55%),radial-gradient(ellipse 100% 100% at 50% 0%,#0a0418 0%,#060310 100%)}
 .cosmos::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.85) 0%,transparent 100%),radial-gradient(1px 1px at 20% 6%,rgba(200,168,75,.65) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 34% 22%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 52% 9%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 70% 4%,rgba(255,255,255,.85) 0%,transparent 100%),radial-gradient(1px 1px at 85% 16%,rgba(200,168,75,.55) 0%,transparent 100%),radial-gradient(1px 1px at 6% 58%,rgba(255,255,255,.45) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 42% 72%,rgba(200,168,75,.45) 0%,transparent 100%),radial-gradient(1px 1px at 65% 84%,rgba(255,255,255,.55) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 30% 94%,rgba(255,255,255,.8) 0%,transparent 100%);animation:starPulse 8s ease-in-out infinite alternate}
 @keyframes starPulse{0%{opacity:.55}100%{opacity:1}}
 .wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:24px 18px 80px}
@@ -34,7 +34,7 @@ header{text-align:center;padding:44px 0 32px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .welcome-msg{font-size:22px;line-height:1.95;color:var(--parchment);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;padding:20px 0}
 .name-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
-.name-inp{background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.3);color:var(--parchment);padding:15px 20px;font-family:Merriweather,Georgia,serif;font-size:18px;width:260px;border-radius:4px;outline:none;transition:border-color .25s}
+.name-inp{background:rgba(15,10,3,.8);border:1px solid rgba(200,168,75,.3);color:var(--parchment);padding:15px 20px;font-family:Merriweather,Georgia,serif;font-size:18px;width:260px;border-radius:4px;outline:none;transition:border-color .25s}
 .name-inp:focus{border-color:rgba(200,168,75,.6)}
 .name-inp::placeholder{color:rgba(237,227,208,.22);font-style:italic}
 .btn-go{background:linear-gradient(135deg,rgba(122,21,37,.75),rgba(46,18,80,.95));border:1px solid var(--gold);color:var(--gbright);padding:16px 32px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;cursor:pointer;transition:all .35s;text-transform:uppercase;border-radius:4px;position:relative;overflow:hidden}
@@ -57,7 +57,7 @@ header{text-align:center;padding:44px 0 32px}
 .q-examples{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
 .q-ex{background:rgba(8,4,18,.6);border:1px solid rgba(200,168,75,.28);padding:8px 14px;font-size:13.5px;color:rgba(237,227,208,.75);cursor:pointer;transition:all .2s;border-radius:20px;font-style:italic}
 .q-ex:hover{border-color:var(--gold);color:var(--gbright);background:rgba(200,168,75,.06)}
-.q-ta{width:100%;background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.28);color:var(--parchment);padding:15px 16px;font-family:Merriweather,Georgia,serif;font-size:17px;resize:none;min-height:95px;line-height:1.8;border-radius:4px;outline:none;transition:border-color .25s;margin-bottom:14px}
+.q-ta{width:100%;background:rgba(15,10,3,.8);border:1px solid rgba(200,168,75,.28);color:var(--parchment);padding:15px 16px;font-family:Merriweather,Georgia,serif;font-size:17px;resize:none;min-height:95px;line-height:1.8;border-radius:4px;outline:none;transition:border-color .25s;margin-bottom:14px}
 .q-ta:focus{border-color:rgba(200,168,75,.5)}
 .q-ta::placeholder{color:rgba(237,227,208,.2);font-style:italic}
 .q-note{font-size:16px;color:rgba(237,227,208,.62);font-style:italic;margin-bottom:16px;text-align:center;line-height:1.6}
@@ -70,7 +70,7 @@ header{text-align:center;padding:44px 0 32px}
 .intent-lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.9}
 .intent-txt{font-size:16px;color:rgba(237,227,208,.88);font-style:italic;line-height:1.75}
 .cards-row{display:flex;flex-wrap:wrap;justify-content:center;gap:11px;margin-bottom:24px;min-height:160px}
-.cw{width:100px;animation:cardIn .5s ease both;opacity:0}
+.cw{width:90px;animation:cardIn .5s ease both;opacity:0}
 @keyframes cardIn{0%{opacity:0;transform:rotateY(90deg)}60%{opacity:1;transform:rotateY(-5deg)}100%{opacity:1;transform:rotateY(0)}}
 .cb{background:linear-gradient(160deg,#18092e,#0b061a);border:1.5px solid var(--gold);border-radius:6px;padding:10px 8px 8px;text-align:center;min-height:148px;display:flex;flex-direction:column;justify-content:space-between;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.5)}
 .cb::before{content:'';position:absolute;inset:4px;border:1px solid rgba(200,168,75,.1);border-radius:3px;pointer-events:none}
@@ -102,7 +102,7 @@ header{text-align:center;padding:44px 0 32px}
 .stars{display:flex;gap:9px;justify-content:center;margin-bottom:13px}
 .star{font-size:24px;cursor:pointer;opacity:.25;transition:all .2s;filter:grayscale(1)}
 .star:hover,.star.lit{opacity:1;filter:none;transform:scale(1.12)}
-.fb-ta{width:100%;background:rgba(6,3,15,.8);border:1px solid rgba(200,168,75,.2);color:var(--parchment);padding:11px;font-family:Merriweather,Georgia,serif;font-size:15px;resize:none;min-height:65px;margin-bottom:11px;border-radius:4px;outline:none}
+.fb-ta{width:100%;background:rgba(15,10,3,.8);border:1px solid rgba(200,168,75,.2);color:var(--parchment);padding:11px;font-family:Merriweather,Georgia,serif;font-size:15px;resize:none;min-height:65px;margin-bottom:11px;border-radius:4px;outline:none}
 .fb-ta::placeholder{color:rgba(237,227,208,.18);font-style:italic}
 .fb-sent{text-align:center;color:var(--gold);font-style:italic;font-size:13.5px;padding:8px;display:none}
 .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
@@ -119,7 +119,7 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 
 /* DAİLY LİMİT */
 .limit-screen{position:fixed;inset:0;z-index:998;background:rgba(7,4,14,.95);display:none;align-items:center;justify-content:center;padding:24px}
-.limit-box{background:rgba(12,7,32,.9);border:1px solid rgba(200,168,75,.3);padding:32px 28px;max-width:380px;width:100%;text-align:center;border-radius:8px}
+.limit-box{background:rgba(18,12,3,.9);border:1px solid rgba(200,168,75,.3);padding:32px 28px;max-width:380px;width:100%;text-align:center;border-radius:8px}
 .limit-owl{font-size:44px;margin-bottom:14px}
 .limit-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
 .limit-msg{font-size:15px;color:rgba(237,227,208,.78);line-height:1.8;margin-bottom:8px}
@@ -137,11 +137,11 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 
 /* API KEY SCREEN */
 .key-screen{position:fixed;inset:0;z-index:999;background:rgba(7,4,14,.96);display:none;align-items:center;justify-content:center;padding:24px}
-.key-box{background:rgba(12,7,32,.9);border:1px solid rgba(200,168,75,.4);padding:32px 28px;max-width:420px;width:100%;text-align:center;border-radius:8px}
+.key-box{background:rgba(18,12,3,.9);border:1px solid rgba(200,168,75,.4);padding:32px 28px;max-width:420px;width:100%;text-align:center;border-radius:8px}
 .key-owl{font-size:48px;margin-bottom:16px}
 .key-title{font-family:'Orbitron',sans-serif;font-size:16px;color:var(--gbright);letter-spacing:4px;text-transform:uppercase;margin-bottom:14px}
 .key-desc{font-size:17px;color:rgba(237,227,208,.82);line-height:1.95;margin-bottom:22px;font-style:italic}
-.key-inp{width:100%;background:rgba(6,3,15,.9);border:1px solid rgba(200,168,75,.35);color:var(--parchment);padding:13px 16px;font-family:Merriweather,Georgia,serif;font-size:15px;border-radius:4px;outline:none;margin-bottom:12px;text-align:center;letter-spacing:1px}
+.key-inp{width:100%;background:rgba(15,10,3,.9);border:1px solid rgba(200,168,75,.35);color:var(--parchment);padding:13px 16px;font-family:Merriweather,Georgia,serif;font-size:15px;border-radius:4px;outline:none;margin-bottom:12px;text-align:center;letter-spacing:1px}
 .key-inp::placeholder{color:rgba(237,227,208,.3);font-style:italic}
 .key-note{font-size:12px;color:rgba(237,227,208,.45);font-style:italic;margin-top:10px;line-height:1.6}
 .key-err{color:#e07060;font-size:13px;margin-top:8px;display:none}
@@ -149,8 +149,6 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 
 @media(max-width:600px){.wrap{padding:18px 14px 70px}.title-main{font-size:22px;letter-spacing:2px}.cat-grid{grid-template-columns:repeat(2,1fr)}.spread-grid{grid-template-columns:repeat(2,1fr)}.rbox-body{font-size:16.5px;line-height:2}.rbox{padding:18px 16px}.cbox{padding:14px 16px}.share-btns{gap:6px}.sbtn{padding:10px 12px;font-size:9.5px}.acts{gap:10px}.abtn{padding:13px 18px}}
 </style>
-<script>
-</script>
 </head>
 <body>
 <div class="cosmos"></div>
@@ -224,6 +222,17 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
     <div class="cards-row" id="cardsRow"></div>
     <div id="readingArea"></div>
     <div class="disclaimer" id="disc">Tarot karar vermez — yalnızca seçtiğin yoldaki olasılıkları gösterir. Son karar her zaman senindir.</div>
+    <div class="share-box" id="shareBox" style="display:none">
+      <div class="share-title" id="shareT">Bu Açılımı Paylaş</div>
+      <div class="share-btns">
+        <button class="sbtn" onclick="shareReading('copy')" id="sCopy">📋 Kopyala</button>
+        <button class="sbtn" onclick="shareReading('image')" id="sImg">🖼️ Görsel</button>
+        <button class="sbtn" onclick="shareReading('whatsapp')" id="sWA">💬 WhatsApp</button>
+        <button class="sbtn" onclick="shareReading('telegram')" id="sTG">✈️ Telegram</button>
+        <button class="sbtn" onclick="shareReading('facebook')" id="sFB">👤 Facebook</button>
+        <button class="sbtn" onclick="shareReading('twitter')" id="sTW">🐦 Twitter/X</button>
+        <button class="sbtn" onclick="shareReading('mail')" id="sMail">📧 Mail</button>
+      </div>
     </div>
     <div class="fb-box" id="fbBox" style="display:none">
       <div class="fb-title" id="fbT">Bu Yorum Sana Ne Kadar Uydu?</div>
@@ -282,10 +291,10 @@ const TR = {
   nameP:'İsmini yaz…',nameH:'İsmin sadece sana özel deneyim için kullanılır',btnStart:'✦ Başla',
   cats:{
     daily:{i:'🌅',n:'Sabah Ritüeli',g:'Bugünün enerjisini görmek için soru yazmana gerek yok. Niyetini tut, kartı çek.',e:['Bugün benim için ne var?','Bugünün mesajı nedir?','Bugün neye dikkat etmeliyim?']},
-    love:{i:'💫',n:'Aşk & İlişki',g:'Aşk konusunda merak ettiğin her şeyi sorabilirsin.',e:['Yakın zamanda yeni bir aşk var mı?','Beni seviyor mu / benim hakkımda ne düşünüyor?','Aramızdaki enerji ne söylüyor?','Adım atacak mı, beklemeli miyim?','Kısmetimde kim var?','Evleneceğim ya da hayatıma girecek kişi nasıl biri?','Bu ilişkiyi bırakmalı mıyım?','Eski sevgilimle yollarımız kesişecek mi?']},
-    work:{i:'⚡',n:'İş & Kariyer',g:'İş ve kariyer konularında aklındaki her şeyi sorabilirsin.',e:['İşe girebilecek miyim?','Kariyerimde yükselebilecek miyim?','Beklediğim fırsatları ne zaman yakalayacağım?','Düşündüğüm projeyi hayata geçirmeli miyim yoksa vazgeçmeli miyim?','Şu anki işimde kalmaya devam etmeli miyim?','İş hayatımda önümü tıkayan ne?']},
-    health:{i:'🌿',n:'Sağlık & Enerji',g:'Sağlık ve enerji konularında aklındaki her şeyi sorabilirsin.',e:['Sağlığıma kavuşabilecek miyim?','Sağlığımı neler etkiliyor?','Enerjimi nasıl pozitife çevirebilirim?','Sağlık sorunlarımın ne gibi sebepleri var?','Bedenimin bana ne söylemeye çalıştığı?','Bu dönemde kendime nasıl iyi bakabilirim?']},
-    money:{i:'🌕',n:'Para & Finans',g:'Para ve finans konularında aklındaki her şeyi sorabilirsin.',e:['Parayı çekmek için ne yapabilirim?','Yakın zamanda kazanç fırsatları var mı?','Beklediğim kazançlar elime geliyor mu?','Para sıkıntılarım ne zaman bitecek?','Kazançlarımın önündeki engeller ne?','Yaptığım yatırım/harcama doğru mu?','Maddi durumum önümüzdeki dönemde nasıl?']},
+    love:{i:'💫',n:'Aşk & İlişki',g:'Aşk konusunda "karar ver" yerine "benim için ne doğru?" sorun. Kartlar olasılıkları gösterir, karar vermez.',e:['Yakın zamanda yeni bir aşk var mı?','Beni seviyor mu / benim hakkımda ne düşünüyor?','Aramızdaki enerji ne söylüyor?','Adım atacak mı, beklemeli miyim?','Kısmetimde kim var?','Evleneceğim ya da hayatıma girecek kişi nasıl biri?','Bu ilişkiyi bırakmalı mıyım?','Eski sevgilimle yollarımız kesişecek mi?']},
+    work:{i:'⚡',n:'İş & Kariyer',g:'İş konularında "yapmalı mıyım?" yerine "bu yolda benim için ne var?" sorun.',e:['İşe girebilecek miyim?','Kariyerimde yükselebilecek miyim?','Beklediğim fırsatları ne zaman yakalayacağım?','Düşündüğüm projeyi hayata geçirmeli miyim yoksa vazgeçmeli miyim?','Şu anki işimde kalmaya devam etmeli miyim?','İş hayatımda önümü tıkayan ne?']},
+    health:{i:'🌿',n:'Sağlık & Enerji',g:'Kartlar tıbbi tavsiye vermez. Enerjinizi, motivasyonunuzu sorabilirsiniz.',e:['Sağlığıma kavuşabilecek miyim?','Sağlığımı neler etkiliyor?','Enerjimi nasıl pozitife çevirebilirim?','Sağlık sorunlarımın ne gibi sebepleri var?','Bedenimin bana ne söylemeye çalıştığı?','Bu dönemde kendime nasıl iyi bakabilirim?']},
+    money:{i:'🌕',n:'Para & Finans',g:'Para konularında "kazanır mıyım?" yerine "bu konuda enerjim nasıl?" sorun.',e:['Parayı çekmek için ne yapabilirim?','Yakın zamanda kazanç fırsatları var mı?','Beklediğim kazançlar elime geliyor mu?','Para sıkıntılarım ne zaman bitecek?','Kazançlarımın önündeki engeller ne?','Yaptığım yatırım/harcama doğru mu?','Maddi durumum önümüzdeki dönemde nasıl?']},
     general:{i:'🔮',n:'Yaklaşan Etkiler',g:'Genel bir bakış için açık sorular çok etkilidir.',e:['Şu an hayatımda neye dikkat etmeliyim?','Bu dönemde benim için ne önemli?','Bugün hangi enerjiyle ilerlemeliyim?']},
     custom:{i:'✍️',n:'Kendi Sorun',g:'Kendi sorunuzu yazın. En iyi sorular "nasıl", "ne" veya "hangi yönde" şeklinde olanlar.',e:['Bu konuda benim için olasılıklar neler?','Şu an görmediğim ne var?','Bu durumda güçlü yanım ne?']},
   },
@@ -324,7 +333,7 @@ const EN = {
     work:{i:'⚡',n:'Work & Career',g:'Ask "what is here for me?" rather than "should I do this?" Cards show possibilities.',e:['What is in this opportunity for me?','What should I focus on in my career?','Am I ready to take this step?']},
     health:{i:'🌿',n:'Health & Energy',g:'Cards do not give medical advice. Ask about your energy or sense of wellbeing.',e:['What is affecting my energy right now?','How can I take better care of myself?','What balance do I need in body and mind?']},
     money:{i:'🌕',n:'Money & Finance',g:'Ask "how is my energy around this?" rather than "will I earn?" Cards point to possibilities.',e:['How is the energy around my finances?','What should I pay attention to financially?','What is the right step for me right now?']},
-    general:{i:'🔮',n:'Upcoming Energies',g:'Open questions like "what is important right now?" work well for a general overview.',e:['What should I pay attention to in my life?','What is important for me in this period?','What energy should I move forward with today?']},
+    general:{i:'🔮',n:'General',g:'Open questions like "what is important right now?" work well for a general overview.',e:['What should I pay attention to in my life?','What is important for me in this period?','What energy should I move forward with today?']},
     custom:{i:'✍️',n:'My Own Question',g:'Write your own question. "How", "what" or "which direction" questions work best.',e:['What are the possibilities for me here?','What am I not seeing right now?','What is my strength in this situation?']},
   },
   spreads:{
@@ -546,14 +555,13 @@ function selCat(k){
   const T2=t(),c=T2.cats[k];
   document.getElementById('s1t').textContent=T2.s1t.replace('%N%',uName);
   // Günlük kart — direkt tek kart açılımına geç
-  if(k==='daily'){
-    spread='s1';
-    q=T2.cats.daily.e[0];
-    document.getElementById('intTxt').textContent=T2.cats.daily.n+': "'+q+'"';
+  if(k==='daily'||k==='general'){
+    spread = k==='daily' ? 's1' : 's5';
+    q = k==='daily' ? T2.cats.daily.e[0] : 'Yaklaşan etkiler ve enerjiler';
+    document.getElementById('intTxt').textContent=T2.cats[k].n+': "'+q+'"';
     document.getElementById('intBox').style.display='block';
     document.getElementById('s3note').style.display='block';
     document.getElementById('spGrid').style.display='none';
-    // ymodRow removed
     document.getElementById('btnDraw').style.display='block';
     setTimeout(()=>goStep(3),350);
     return;
@@ -602,19 +610,15 @@ async function drawCards(){
   const pos=SPOS[spread][lang];
   cards=[...ALL].sort(()=>Math.random()-.5).slice(0,pos.length).map(c=>({...c,isRev:Math.random()>.65}));
   goStep(4);
-  document.getElementById('cardsRow').innerHTML=cards.map((c,i)=>{
-    const imgSrc = CARD_IMAGES[c.id];
-    const imgHtml = imgSrc 
-      ? '<img src="'+imgSrc+'" style="width:100%;border-radius:6px;display:block;margin-bottom:4px;'+(c.isRev?'transform:rotate(180deg)':'')+'">'
-      : '<div class="csym">'+c.sym+'</div>';
-    return '<div class="cw" style="animation-delay:'+(i*.1)+'s">' +
+  document.getElementById('cardsRow').innerHTML=cards.map((c,i)=>
+    '<div class="cw" style="animation-delay:'+(i*.1)+'s">' +
     '<div class="cb'+(c.isRev?' rev':'')+'">' +
-    imgHtml +
+    '<div class="csym">'+c.sym+'</div>' +
     '<div><div class="cnm">'+c.name+'</div><div style="font-size:8px;color:rgba(237,227,208,.6);margin-top:1px">'+c.n+'</div></div>' +
     '<div class="cpos">'+pos[i]+'</div>' +
     (c.isRev?'<div class="rtag">'+t().rev+'</div>':'')+
-    '</div></div>';
-  }).join('');
+    '</div></div>'
+  ).join('');
   document.getElementById('readingArea').innerHTML='<div class="loading"><div class="ring"></div><br>'+t().loading+'</div>';
   document.getElementById('shareBox').style.display='none';
   document.getElementById('fbBox').style.display='none';
@@ -624,13 +628,12 @@ async function drawCards(){
 let activeModel = 'gpt-4o';
 
 async function callOpenAI(model, key, sysprompt, userprompt, maxTokens){
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 30000);
+  const timeout = setTimeout(() => {}, 30000);
   try{
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {"Content-Type":"application/json","Authorization":"Bearer "+key},
-      signal: controller.signal,
+      
       body: JSON.stringify({
         model: model,
         max_tokens: maxTokens||800,
@@ -780,7 +783,7 @@ Follow the format exactly. Output only the formatted response.`;
   const prompt = lang==='tr'
     ? isDaily
       ? `Kullanıcı adı: ${uName}. Bugünün tarot kartı:\n${cdesc}\n\nGünlük kart yorumu yaz. ${uName} ismini 1-2 kez kullan. Sabah enerjisi, güne hazırlık tonu. Kartın astroloji ve numeroloji bağlamını ince bir dokunuş olarak ekle.\n\nTAM OLARAK bu formatta ver:\nYORUM: [180-220 kelime günlük yorum. Kartın enerjisini bugüne yansıt.]\n---\nÖZET: [Tek cümle. "Bugün seni..." ile başla.]\n---\nNİYET: [Tek niyet cümlesi. "Bugün ben..." ile başla.]`
-      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru (MUTLAKA bu soruya cevap ver, görmezden gelme): "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [KESİNLİKLE kart adı, pozisyon adı, düz/ters SÖYLEME. Şu yapıyı kullan:
+      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [KESİNLİKLE kart adı, pozisyon adı, düz/ters SÖYLEME. Şu yapıyı kullan:
 
 1. GİRİŞ: Kişinin genel durumunu, enerjisini bir bütün olarak gör. "Bak şu an senin durumun şöyle..." diye başla. Zorba tarzda.
 
@@ -959,7 +962,6 @@ function saveKeyUpdate(){
   alert('✓ Key güncellendi!');
 }
 
-
 window.addEventListener('load',init);
 </script>
 
@@ -982,10 +984,10 @@ window.addEventListener('load',init);
 
 
 <!-- KEY UPDATE BOX -->
-<div id="keyUpdateBox" style="display:none;position:fixed;top:50px;right:14px;z-index:500;background:rgba(12,7,32,.96);border:1px solid rgba(200,168,75,.4);padding:16px;border-radius:8px;width:280px">
+<div id="keyUpdateBox" style="display:none;position:fixed;top:50px;right:14px;z-index:500;background:rgba(18,12,3,.96);border:1px solid rgba(200,168,75,.4);padding:16px;border-radius:8px;width:280px">
   <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gbright);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">🔑 API Key Güncelle</div>
   <input id="keyUpdateInp" type="password" placeholder="sk-proj-..." 
-    style="width:100%;background:rgba(6,3,15,.9);border:1px solid rgba(200,168,75,.3);color:var(--parchment);padding:10px;font-family:Merriweather,serif;font-size:13px;border-radius:4px;outline:none;margin-bottom:8px"
+    style="width:100%;background:rgba(15,10,3,.9);border:1px solid rgba(200,168,75,.3);color:var(--parchment);padding:10px;font-family:Merriweather,serif;font-size:13px;border-radius:4px;outline:none;margin-bottom:8px"
     onkeydown="if(event.key==='Enter')saveKeyUpdate()">
   <div id="keyUpdateErr" style="display:none;color:#e07060;font-size:12px;margin-bottom:8px"></div>
   <div style="display:flex;gap:8px">
