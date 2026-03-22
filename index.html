@@ -8,8 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Cinzel:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0a1a0e;--parchment:#ede3d0;
-  --gold:#7aad5e;--gbright:#e8cc7a;--glow:rgba(200,168,75,.18);
+  --ink:#100a02;--parchment:#ede3d0;
+  --gold:#c8a84b;--gbright:#e8cc7a;--glow:rgba(200,168,75,.18);
   --silver:#b8b4cc;--crimson:#7a1525;--violet:#2e1250;--rose:#b87060;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -152,7 +152,7 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
 </head>
 <body>
 <div class="cosmos"></div>
-
+<canvas id="shareCanvas" width="800" height="500"></canvas>
 <div class="lang-bar">
   <button class="lbtn" onclick="showKeyUpdate()" title="API Key Güncelle" style="font-size:11px;padding:5px 8px">🔑</button>
 </div>
@@ -222,8 +222,17 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
     <div class="cards-row" id="cardsRow"></div>
     <div id="readingArea"></div>
     <div class="disclaimer" id="disc">Tarot karar vermez — yalnızca seçtiğin yoldaki olasılıkları gösterir. Son karar her zaman senindir.</div>
-    
-      
+    <div class="share-box" id="shareBox" style="display:none">
+      <div class="share-title" id="shareT">Bu Açılımı Paylaş</div>
+      <div class="share-btns">
+        <button class="sbtn" onclick="shareReading('copy')" id="sCopy">📋 Kopyala</button>
+        <button class="sbtn" onclick="shareReading('image')" id="sImg">🖼️ Görsel</button>
+        <button class="sbtn" onclick="shareReading('whatsapp')" id="sWA">💬 WhatsApp</button>
+        <button class="sbtn" onclick="shareReading('telegram')" id="sTG">✈️ Telegram</button>
+        <button class="sbtn" onclick="shareReading('facebook')" id="sFB">👤 Facebook</button>
+        <button class="sbtn" onclick="shareReading('twitter')" id="sTW">🐦 Twitter/X</button>
+        <button class="sbtn" onclick="shareReading('mail')" id="sMail">📧 Mail</button>
+      </div>
     </div>
     <div class="fb-box" id="fbBox" style="display:none">
       <div class="fb-title" id="fbT">Bu Yorum Sana Ne Kadar Uydu?</div>
