@@ -302,7 +302,7 @@ const TR = {
   },
   spreads:{
     s1:{n:'⚡ Tek Kart',d:'Anlık işaret · Hızlı cevap'},
-    s3:{n:'🔍 Anlık Bakış',d:'3 kart · Soru-cevap'},
+
     s5:{n:'🔮 Derinlemesine',d:'5 kart · Detaylı okuma'},
     celtic:{n:'🌀 Tam Analiz',d:'10 kart · Derin analiz'},
   },
@@ -340,14 +340,14 @@ const EN = {
   },
   spreads:{
     s1:{n:'⚡ Single Card',d:'Quick sign · Fast answer'},
-    s3:{n:'🔍 Quick Read',d:'3 cards · Q&A style'},
+
     s5:{n:'🔮 Deep Dive',d:'5 cards · Detailed reading'},
     celtic:{n:'🌀 Full Analysis',d:'10 cards · Complete reading'},
   },
 };
 const SPOS = {
   s1:{tr:['Günün Mesajı'],en:["Today's Message"]},
-  s3:{tr:['Geçmiş','Şimdi','Gelecek'],en:['Past','Present','Future']},
+
   s5:{tr:['Merkez','Verilenler','Alınanlar','Bilinç','Bilinçdışı'],en:['Center','Given','Received','Conscious','Unconscious']},
   celtic:{tr:['Durum','Engel','Temel','Geçen','Gelecek','Yakın Gelecek','Benlik','Dış Çevre','Umut/Korku','Sonuç'],en:['Present','Challenge','Foundation','Past','Future','Near Future','Self','Environment','Hopes/Fears','Outcome']},
 };
@@ -582,7 +582,7 @@ function selCat(k){
 function useEx(el){document.getElementById('qInp').value=el.textContent;document.getElementById('qInp').style.borderColor='rgba(200,168,75,.4)';}
 
 function renderSps(){
-  const T2=t();const order=['s1','s3','s5','celtic'];
+  const T2=t();const order=['s1','s5','celtic'];
   document.getElementById('spGrid').innerHTML=order.map(k=>{
     const s=T2.spreads[k];
     return `<div class="sp-btn${spread===k?' on':''}" onclick="selSp('${k}')">` +
@@ -709,12 +709,12 @@ async function interpret(){
 
   const ton = detectTone(cat, cards, q);
   const tonTR = {
-    'sefkatli':'Zor kartlar gelmiş, ama dramatik olma. Sıcak ve dürüst ol — "lan bu dönem gerçekten boktan ama geçer" enerjisi. Acıyı gör ama melodram yapma. Küçük bir espri bile olabilir, hafifletmek için.',
-    'destekleyici':'Dürüst ve doğrudan. "Oğlum bak şu gerçeğe" enerjisi. Güçlü yanını göster ama yalakalık yapma.',
-    'sicak':'Aşk konusu, biraz cilveli ol 😏 "Ee ne var ne yok" der gibi. Eğlenceli, hafif uçuşan ama yere basan.',
-    'neseli':'Tam gaz eğlenceli. Espri yap, güldür, ama boş olmasın. "Vay be bu iyi" enerjisi.',
-    'analitik':'Net ve keskin. "Bak şu rakama, şu gerçeğe" — lafı geveleme, direkt söyle.',
-    'dengeli':'Mahalle arkadaşı gibi. Hem güldür hem düşündür. Argo serbes, vaaz yasak.'
+    'sefkatli':'Zor kartlar var ama melodram yasak 💀 "Lan bu dönem gerçekten boktan ama dinle beni" enerjisi. Acıyı gör, hafifçe zorbalayarak ama sevgiyle.',
+    'destekleyici':'"Oğlum dur bir saniye 🙄 bak şu gerçeğe" enerjisi. Sert ama doğru.',
+    'sicak':'Aşk konusu, tam dedikodu modu 👀😏 "Ee ne var ne yok kız, anlat bakalım" — cilveli, esprili, biraz zorbalayıcı.',
+    'neseli':'Tam gaz 🔥 Espri, küfür, güldür. "Vay be bu güzel gelmiş ama sen yine de bir halt edersin" enerjisi.',
+    'analitik':'"Bak oğlum para/iş konusu, şakayı bırak 😤" Net, keskin, lafı geveleme.',
+    'dengeli':'Klasik zorba mod 😂 Hem güldür hem sarsıcı gerçek söyle. Emoji bol, vaaz sıfır.'
   }[ton];
   const tonEN = {
     'sefkatli':'Compassionate and understanding. Heavy cards appeared, be gentle. Acknowledge pain but give hope.',
@@ -737,7 +737,7 @@ async function interpret(){
 
 TON: ${tonTR}
 KART KURALI: ${kartKuralTR}
-DİL VE KARAKTER: Sen Baykuş Tarot'sun ama tam bir mahalle ağzıyla konuşuyorsun. Küfür serbes, argo zorunlu, vaaz kesinlikle yasak. "Lan oğlum", "ya kız", "siktir et şunu", "ne halt ediyorsun", "boşver canını", "aga bak şuraya", "ya be" gibi ifadeler doğal gelsin. Dedikodu yapar gibi cilveli, bazen sarsıcı, bazen güldürücü. Hiç "kartlar size şunu söylüyor" deme — o dili unut. "Bak ya", "açık söyleyeyim", "ya da şöyle düşün" de. Kısa, punch'lı, doğrudan. Espriyi tam yerinde yap. Soru sor, cevap bekleme. Ayna tut ama resmi olma, hiç.
+DİL VE KARAKTER: Sen Baykuş Tarot'sun — ama tam bir zorba mahalle abisi/ablası gibi konuşuyorsun 😤 Küfür serbest, argo zorunlu, kibarlık yasak. Şunları doğal kullan: "lan", "ya kız", "oğlum", "siktir et şunu", "ne halt ediyorsun", "çekil git", "bön bön bakma", "senden bir cacık olmaz", "yırtsana ağzını", "piksellerimi boşa harcama", "hayun peşinde koşuyorsun", "açlıktan nefesin kokuyor tek derdin aşk mı" gibi. Emoji kullan: 😂🙄💀😤🤦‍♀️👀🔥 Dedikodu yapar gibi arkadan konuş: "aaa arkandan konuşuyorlar kız, dur dur duydum 👀" Bazen direkt zorbalayıcı ol ama esprili: "sana elli kere dedim işine odaklan sen hala herif peşinde 🤦‍♀️" Hiç vaaz verme. Hiç "kartlar size şunu söylüyor" deme. Hiç "spiritüel yolculuk" deme. Kısa, sert, güldürücü. Soru sor, cevap bekleme. Ayna tut ama acımasızca.
 
 REFERANS (arka planda kullan, hiç söyleme):
 [Metin Kiraz] Planet-kart: Serseri=Uranüs(özgürlük), Büyücü=Merkür(zeka/iletişim), Yüce Rahibe=Ay(sezgi/bilinçdışı), İmparatoriçe=Venüs(bereket/sevgi), İmparator=Mars(güç/otorite), Hiyerofant=Boğa(gelenek), Aşıklar=İkizler/Venüs(seçim/ilişki), Savaş Arabası=Yengeç(kontrol/zafer), Güç=Aslan(cesaret/şefkat), Ermiş=Başak(bilgelik/yalnızlık), Kader Çarkı=Jüpiter(değişim/şans), Adalet=Terazi(denge/hak), Asılan Adam=Neptün(feda/bekleyiş), Ölüm=Akrep/Plüton(dönüşüm), Denge=Yay(uyum/sabır), Şeytan=Oğlak/Satürn(bağımlılık), Kule=Mars(yıkım/uyanış), Yıldız=Kova(umut/şifa), Ay=Balık(yanılsama/korku), Güneş=Güneş(başarı/mutluluk), Yargı=Plüton(uyanış), Dünya=Satürn(tamamlanma). Kupalar=Su/duygu, Kılıçlar=Hava/zihin, Asalar=Ateş/enerji, Tılsımlar=Toprak/madde. Sayılar: 1=başlangıç, 2=seçim, 3=büyüme, 4=yapı, 5=zorluk, 6=uyum, 7=içe bakış, 8=güç, 9=tamamlanma, 10=döngü sonu.
@@ -771,16 +771,16 @@ Follow the format exactly. Output only the formatted response.`;
   const prompt = lang==='tr'
     ? isDaily
       ? `Kullanıcı adı: ${uName}. Bugünün tarot kartı:\n${cdesc}\n\nGünlük kart yorumu yaz. ${uName} ismini 1-2 kez kullan. Sabah enerjisi, güne hazırlık tonu. Kartın astroloji ve numeroloji bağlamını ince bir dokunuş olarak ekle.\n\nTAM OLARAK bu formatta ver:\nYORUM: [180-220 kelime günlük yorum. Kartın enerjisini bugüne yansıt.]\n---\nÖZET: [Tek cümle. "Bugün seni..." ile başla.]\n---\nNİYET: [Tek niyet cümlesi. "Bugün ben..." ile başla.]`
-      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [Yayılım türüne göre TAM OLARAK şu kadar kelime yaz: 1 kart=100-110 kelime, 3 kart=280-300 kelime, 5 kart=400-430 kelime, 10 kart=750-800 kelime. Ne fazla ne eksik. Soruya direkt cevap ver.]\n---\nÖZET: [Tek güçlü cümle.]\n---\nADIM: [1-2 somut adım. "Belki..." ile başla.]`
+      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [Soruya direkt cevap ver. Ne kadar gerekiyorsa o kadar yaz, kıs da uzat da.]\n---\nÖZET: [Tek güçlü cümle.]\n---\nADIM: [1-2 somut adım. "Belki..." ile başla.]`
     : isDaily
-      ? `User: ${uName}. Today's card:\n${cdesc}\n\nWrite a daily reading. Use ${uName}'s name 1-2 times. Morning energy, motivating tone. Add subtle astrological/numerological context.\n\nReply in EXACTLY this format:\nREADING: [Write 50-60 words, no more no less.]\n---\nSUMMARY: [One sentence. Start with "Today..."]\n---\nINTENTION: [One intention. Start with "Today I..."]`
-      : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}\n\nCards:\n${cdesc}\n\nWrite a tarot reading. Use ${uName}'s name 1-2 times. Use symbolic depth of each card and position meaning. Add subtle astrology/numerology. Match tone to question type.\n\nReply in EXACTLY this format:\nREADING: [Write EXACTLY this many words by spread: 1 card=100-110, 3 cards=280-300, 5 cards=400-430, 10 cards=750-800. No more, no less. Answer directly.]\n---\nSUMMARY: [One powerful sentence.]\n---\nSTEP: [1-2 concrete steps. Start with "Perhaps..."]`;
+      ? `User: ${uName}. Today's card:\n${cdesc}\n\nWrite a daily reading. Use ${uName}'s name 1-2 times. Morning energy, motivating tone. Add subtle astrological/numerological context.\n\nReply in EXACTLY this format:\nREADING: [Reflect the morning energy, write as much as needed.]\n---\nSUMMARY: [One sentence. Start with "Today..."]\n---\nINTENTION: [One intention. Start with "Today I..."]`
+      : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}\n\nCards:\n${cdesc}\n\nWrite a tarot reading. Use ${uName}'s name 1-2 times. Use symbolic depth of each card and position meaning. Add subtle astrology/numerology. Match tone to question type.\n\nReply in EXACTLY this format:\nREADING: [Answer directly. Write as much as needed, no limits.]\n---\nSUMMARY: [One powerful sentence.]\n---\nSTEP: [1-2 concrete steps. Start with "Perhaps..."]`;
 
   try{
     // Token limits by spread type
-    const tokenMap = {s1: 500, s3: 1000, s5: 1500, celtic: 3000};
+    const tokenMap = {s1: 500, s5: 1500, celtic: 3000};
     const isDaily = (cat==='daily');
-    const maxTok = isDaily ? 300 : (tokenMap[spread] || 500);
+    const maxTok = isDaily ? 400 : (tokenMap[spread] || 500);
     const raw = await callClaude(sysprompt, prompt, maxTok);
     const parts=raw.split('---').map(s=>s.trim());
     const rk=lang==='tr'?'YORUM:':'READING:',sk=lang==='tr'?'ÖZET:':'SUMMARY:';
