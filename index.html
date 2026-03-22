@@ -786,10 +786,26 @@ Follow the format exactly. Output only the formatted response.`;
   const prompt = lang==='tr'
     ? isDaily
       ? `Kullanıcı adı: ${uName}. Bugünün tarot kartı:\n${cdesc}\n\nGünlük kart yorumu yaz. ${uName} ismini 1-2 kez kullan. Sabah enerjisi, güne hazırlık tonu. Kartın astroloji ve numeroloji bağlamını ince bir dokunuş olarak ekle.\n\nTAM OLARAK bu formatta ver:\nYORUM: [180-220 kelime günlük yorum. Kartın enerjisini bugüne yansıt.]\n---\nÖZET: [Tek cümle. "Bugün seni..." ile başla.]\n---\nNİYET: [Tek niyet cümlesi. "Bugün ben..." ile başla.]`
-      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [KESİNLİKLE kart adı, pozisyon adı, düz/ters bilgisi SÖYLEME. Sanki sezgiyle görüyormuşsun gibi yaz. Kartlardan gelen enerjiyi tek bir akıcı hikayeye dök. 'Şu an etrafında bir gerilim var', 'biri seni durdurmaya çalışıyor', 'içinde biliyorsun ama kabul etmek istemiyorsun' gibi — kart adına gerek yok. Soru-enerji-hayat üçgenini ör. Bütünlük, akış, hikaye. Zorba tarzı koru.]\n---\nÖZET: [Tek güçlü cümle.]\n---\nADIM: [Vaaz verme, öğüt verme, 'belki' deme. Zorba, esprili, meme dili, güncel internet argosunu kullan. 'Öff ne halin varsa gör', 'ya söylediklerimi dinlesen', 'hayırlısı', 'bence sus ve yap şunu', 'aga bu çok açık lan' gibi. Kısa, sert, güldürücü.]`
+      : `Kullanıcı adı: ${uName}. Konu: ${cn}. Soru: "${q}".${hCtx}\n\nKartlar:\n${cdesc}\n\nTarot yorumu yaz. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [KESİNLİKLE kart adı, pozisyon adı, düz/ters SÖYLEME. Şu yapıyı kullan:
+
+1. GİRİŞ: Kişinin genel durumunu, enerjisini bir bütün olarak gör. "Bak şu an senin durumun şöyle..." diye başla. Zorba tarzda.
+
+2. GELİŞME: Geçmiş-şimdi-gelecek veya içsel-dışsal çatışmaları birbirine bağla. Hikaye anlat. "Geçmişte şöyle bir şey var, bu seni şu an şöyle etkiliyor, ama bir de şu var ki..." diye ak. Kart adı yok, enerji var. Zorbalamayı, espriyi, memi katıştır.
+
+3. SONUÇ: Son cümle vurucu olsun. Tüm söylenenleri tek bir net mesaja bağla. "Yani sonuçta lan, asıl mesele şu:" gibi. Bırak etki yapsın.
+
+Hikaye gibi aksın, kart raporu gibi sıralamasın. Zorba tarzı koru.]\n---\nÖZET: [Tek güçlü cümle.]\n---\nADIM: [Vaaz verme, öğüt verme, 'belki' deme. Zorba, esprili, meme dili, güncel internet argosunu kullan. 'Öff ne halin varsa gör', 'ya söylediklerimi dinlesen', 'hayırlısı', 'bence sus ve yap şunu', 'aga bu çok açık lan' gibi. Kısa, sert, güldürücü.]`
     : isDaily
       ? `User: ${uName}. Today's card:\n${cdesc}\n\nWrite a daily reading. Use ${uName}'s name 1-2 times. Morning energy, motivating tone. Add subtle astrological/numerological context.\n\nReply in EXACTLY this format:\nREADING: [Reflect the morning energy, write as much as needed.]\n---\nSUMMARY: [One sentence. Start with "Today..."]\n---\nINTENTION: [One intention. Start with "Today I..."]`
-      : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}\n\nCards:\n${cdesc}\n\nWrite a tarot reading. Use ${uName}'s name 1-2 times. Use symbolic depth of each card and position meaning. Add subtle astrology/numerology. Match tone to question type.\n\nReply in EXACTLY this format:\nREADING: [NEVER mention card names, positions, or upright/reversed. Write as if you're sensing intuitively. Pour the card energies into one flowing narrative. No card reports — just story, energy, truth. Keep the zorba style.]\n---\nSUMMARY: [One powerful sentence.]\n---\nSTEP: [No advice, no 'perhaps', no lectures. Be brutally funny. Use meme energy, internet slang. Short, punchy, like a friend who's done with your nonsense.]`;
+      : `User: ${uName}. Topic: ${cn}. Question: "${q}".${hCtx}\n\nCards:\n${cdesc}\n\nWrite a tarot reading. Use ${uName}'s name 1-2 times. Use symbolic depth of each card and position meaning. Add subtle astrology/numerology. Match tone to question type.\n\nReply in EXACTLY this format:\nREADING: [NEVER mention card names, positions, upright/reversed. Use this structure:
+
+1. OPENING: See the person's overall situation as one whole. Start with "Ok so here's what's going on with you right now..." Zorba style.
+
+2. MIDDLE: Connect past-present-future or inner-outer conflicts into a flowing story. "There's something from the past weighing on you, and it's affecting you now because... but here's the twist..." No card names, just energy. Mix in zorba humor and brutal honesty.
+
+3. CLOSING: Last sentence hits hard. Tie everything into one clear message. "So basically, the real issue here is:" Let it land.
+
+Flow like a story, not a card report. Keep zorba style.]\n---\nSUMMARY: [One powerful sentence.]\n---\nSTEP: [No advice, no 'perhaps', no lectures. Be brutally funny. Use meme energy, internet slang. Short, punchy, like a friend who's done with your nonsense.]`;
 
   try{
     // Token limits by spread type
