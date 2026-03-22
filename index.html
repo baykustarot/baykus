@@ -593,6 +593,7 @@ function selSp(k){
   setTimeout(()=>document.getElementById('btnDraw').scrollIntoView({behavior:'smooth',block:'nearest'}),200);
 }
 
+const CARD_IMAGES = {};
 async function drawCards(){
   if(!spread)return;
   // Check daily limit
