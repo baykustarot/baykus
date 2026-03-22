@@ -210,18 +210,7 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
   <div class="panel" id="step3">
     <div class="ptitle" id="s3t">Açılım Seçin ve Niyet Tutun</div>
     <div class="spread-grid" id="spGrid" style="display:none"></div>
-    <div class="ymod-row" id="ymodRow">
-      <div class="ymod-btn on" id="ymod1" onclick="selYmod('kartli')">
-        <div class="ymod-icon">🔮</div>
-        <div class="ymod-name">Kartlarla Anlat</div>
-        <div class="ymod-desc">Yorum içinde kartlara değinir</div>
-      </div>
-      <div class="ymod-btn" id="ymod2" onclick="selYmod('saf')">
-        <div class="ymod-icon">✨</div>
-        <div class="ymod-name">Sadece Yorum</div>
-        <div class="ymod-desc">Saf sezgisel, kart adı yok</div>
-      </div>
-    </div>
+
     <div class="intent-box" id="intBox" style="display:none">
       <div class="intent-lbl" id="intLbl">Niyetiniz</div>
       <div class="intent-txt" id="intTxt"></div>
@@ -575,7 +564,7 @@ function selCat(k){
     document.getElementById('intBox').style.display='block';
     document.getElementById('s3note').style.display='block';
     document.getElementById('spGrid').style.display='none';
-    document.getElementById('ymodRow').style.display='flex';
+    // ymodRow removed
     document.getElementById('btnDraw').style.display='block';
     setTimeout(()=>goStep(3),350);
     return;
@@ -610,7 +599,7 @@ function selYmod(mod){
 
 function selSp(k){
   spread=k;renderSps();
-  document.getElementById('ymodRow').style.display='flex';
+  // ymodRow removed
   document.getElementById('btnDraw').style.display='block';
   setTimeout(()=>document.getElementById('btnDraw').scrollIntoView({behavior:'smooth',block:'nearest'}),200);
 }
@@ -701,7 +690,7 @@ async function interpret(){
   const hCtx=hist.length>0?'\n'+(lang==='tr'?'Geçmiş sorular:':'Previous questions:')+' '+hist.slice(-3).map(h=>h.c+': "'+h.q+'"').join(', '):'';
 
   // Yorum modunu belirle (yorumMod değişkeni step3'te set edilir)
-  const kartAnlatimi = (typeof yorumMod !== 'undefined') ? yorumMod : 'kartli';
+  const kartAnlatimi = 'kartli';
 
   function detectTone(cat, cards, q) {
     const heavyCards = ['m13','m15','m16','m12','m9','s9','s10','s3','s5','p5'];
@@ -748,7 +737,7 @@ async function interpret(){
 
 TON: ${tonTR}
 KART KURALI: ${kartKuralTR}
-DİL VE KARAKTER: Sen Baykuş Tarot'sun ama resmi değilsin — tam tersine. Arkadaşın gibi konuş, hatta mahalle arkadaşı gibi. Argo kullanabilirsin, küçük küfürler olabilir (siktir et, lan, oğlum, ya kız, boşver, ne biçim, vay be gibi). Dedikodu yapar gibi cilveli ol. Bazen güldür, bazen sarsıcı bir gerçeği pat diye söyle. Vaaz verme, öğüt verme, "bu senin için iyi" deme. Soru sor ama cevap bekleme. Espriyi yerinde yap, boşa harcama. Kısa ve güçlü cümleler. Sanki karşındaki kişiyi biraz tanıyorsun ve ona dürüstçe, eğlenceli bir şekilde ayna tutuyorsun.
+DİL VE KARAKTER: Sen Baykuş Tarot'sun ama tam bir mahalle ağzıyla konuşuyorsun. Küfür serbes, argo zorunlu, vaaz kesinlikle yasak. "Lan oğlum", "ya kız", "siktir et şunu", "ne halt ediyorsun", "boşver canını", "aga bak şuraya", "ya be" gibi ifadeler doğal gelsin. Dedikodu yapar gibi cilveli, bazen sarsıcı, bazen güldürücü. Hiç "kartlar size şunu söylüyor" deme — o dili unut. "Bak ya", "açık söyleyeyim", "ya da şöyle düşün" de. Kısa, punch'lı, doğrudan. Espriyi tam yerinde yap. Soru sor, cevap bekleme. Ayna tut ama resmi olma, hiç.
 
 REFERANS (arka planda kullan, hiç söyleme):
 [Metin Kiraz] Planet-kart: Serseri=Uranüs(özgürlük), Büyücü=Merkür(zeka/iletişim), Yüce Rahibe=Ay(sezgi/bilinçdışı), İmparatoriçe=Venüs(bereket/sevgi), İmparator=Mars(güç/otorite), Hiyerofant=Boğa(gelenek), Aşıklar=İkizler/Venüs(seçim/ilişki), Savaş Arabası=Yengeç(kontrol/zafer), Güç=Aslan(cesaret/şefkat), Ermiş=Başak(bilgelik/yalnızlık), Kader Çarkı=Jüpiter(değişim/şans), Adalet=Terazi(denge/hak), Asılan Adam=Neptün(feda/bekleyiş), Ölüm=Akrep/Plüton(dönüşüm), Denge=Yay(uyum/sabır), Şeytan=Oğlak/Satürn(bağımlılık), Kule=Mars(yıkım/uyanış), Yıldız=Kova(umut/şifa), Ay=Balık(yanılsama/korku), Güneş=Güneş(başarı/mutluluk), Yargı=Plüton(uyanış), Dünya=Satürn(tamamlanma). Kupalar=Su/duygu, Kılıçlar=Hava/zihin, Asalar=Ateş/enerji, Tılsımlar=Toprak/madde. Sayılar: 1=başlangıç, 2=seçim, 3=büyüme, 4=yapı, 5=zorluk, 6=uyum, 7=içe bakış, 8=güç, 9=tamamlanma, 10=döngü sonu.
@@ -789,9 +778,9 @@ Follow the format exactly. Output only the formatted response.`;
 
   try{
     // Token limits by spread type
-    const tokenMap = {s1: 300, s3: 700, s5: 1000, celtic: 2200};
+    const tokenMap = {s1: 500, s3: 1000, s5: 1500, celtic: 3000};
     const isDaily = (cat==='daily');
-    const maxTok = isDaily ? 150 : (tokenMap[spread] || 300);
+    const maxTok = isDaily ? 300 : (tokenMap[spread] || 500);
     const raw = await callClaude(sysprompt, prompt, maxTok);
     const parts=raw.split('---').map(s=>s.trim());
     const rk=lang==='tr'?'YORUM:':'READING:',sk=lang==='tr'?'ÖZET:':'SUMMARY:';
