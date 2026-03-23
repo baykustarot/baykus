@@ -591,6 +591,26 @@ function selSp(k){
   setTimeout(()=>document.getElementById('btnDraw').scrollIntoView({behavior:'smooth',block:'nearest'}),200);
 }
 
+
+function shareReading(type){
+  const txt = document.getElementById('readingArea')?.innerText || '';
+  if(type==='copy'){
+    navigator.clipboard.writeText(txt).then(()=>alert('Kopyalandı!')).catch(()=>{});
+  } else if(type==='whatsapp'){
+    window.open('https://wa.me/?text='+encodeURIComponent(txt.slice(0,500)),'_blank');
+  } else if(type==='telegram'){
+    window.open('https://t.me/share/url?text='+encodeURIComponent(txt.slice(0,500)),'_blank');
+  } else if(type==='facebook'){
+    window.open('https://www.facebook.com/sharer/sharer.php?quote='+encodeURIComponent(txt.slice(0,500)),'_blank');
+  } else if(type==='twitter'){
+    window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(txt.slice(0,280)),'_blank');
+  } else if(type==='mail'){
+    window.open('mailto:?body='+encodeURIComponent(txt.slice(0,1000)),'_blank');
+  } else if(type==='image'){
+    alert('Görsel özelliği yakında!');
+  }
+}
+
 async function drawCards(){
   if(!spread)return;
   // Check daily limit
