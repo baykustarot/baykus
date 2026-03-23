@@ -222,7 +222,18 @@ footer{text-align:center;padding:28px 0 0;color:rgba(237,227,208,.42);font-size:
     <div class="cards-row" id="cardsRow"></div>
     <div id="readingArea"></div>
     <div class="disclaimer" id="disc">Tarot karar vermez — yalnızca seçtiğin yoldaki olasılıkları gösterir. Son karar her zaman senindir.</div>
-    
+    <div class="share-box" id="shareBox" style="display:none">
+      <div class="share-title" id="shareT">Bu Açılımı Paylaş</div>
+      <div class="share-btns">
+        <button class="sbtn" onclick="shareReading('copy')" id="sCopy">📋 Kopyala</button>
+        <button class="sbtn" onclick="shareReading('image')" id="sImg">🖼️ Görsel</button>
+        <button class="sbtn" onclick="shareReading('whatsapp')" id="sWA">💬 WhatsApp</button>
+        <button class="sbtn" onclick="shareReading('telegram')" id="sTG">✈️ Telegram</button>
+        <button class="sbtn" onclick="shareReading('facebook')" id="sFB">👤 Facebook</button>
+        <button class="sbtn" onclick="shareReading('twitter')" id="sTW">🐦 Twitter/X</button>
+        <button class="sbtn" onclick="shareReading('mail')" id="sMail">📧 Mail</button>
+      </div>
+    </div>
     <div class="fb-box" id="fbBox" style="display:none">
       <div class="fb-title" id="fbT">Bu Yorum Sana Ne Kadar Uydu?</div>
     <div style="font-size:11px;color:rgba(237,227,208,.55);font-style:italic;text-align:center;margin-bottom:10px" id="kvkkNote">Geri bildiriminiz uygulamayı geliştirmek için anonim olarak kaydedilir.</div>
@@ -757,9 +768,9 @@ ZORUNLU: Küfür, argo, zorbalama, emoji, dedikodu havası, mahalle ağzı.
 - "Aga cebinde metelik yok tek derdin aşk mı? Önce o işi hallet lan 😤"
 - "Bu kart tam senin durumunu anlatıyor — rezilsin kısaca 😂 ama düzelir"
 
-KARAKTER: Hem güler hem sarsıcı gerçeği söyler. Zorba ama seviyor. Arkadaş ama acımasız dürüst. Emoji kullan ama her cümlede değil — sadece vurgu yapmak istediğinde. "lan", "ya", "oğlum", "kız", "aga" hitaplarını rastgele ve doğal kullan, her cümleye yapıştırma. Sonuç cümlesi her seferinde "lan" ile bitmesin — bazen "hayırlısı", bazen "düşün artık", bazen sadece sert bir gerçek bırak.
+KARAKTER: Hem güler hem sarsıcı gerçeği söyler. Zorba ama seviyor. Arkadaş ama acımasız dürüst. Emoji her cümlede. Hiç yumuşama.
 
-MEME & GÜNCEL DİL: "main character energy", "red flag", "plot twist", "hayırlısı", "glow up zamanı", "toxic döngü", "bunu duyunca ben 💀", "öff ne halin varsa gör" gibi güncel internet dilini yerinde kullan. Sansürsüz, serbest, yaratıcı.
+MEME & GÜNCEL DİL: "main character energy", "red flag", "bunu hak etmiyorsun ama alıyorsun", "yaslanacak omuz yok ama kart var", "plot twist", "hayırlısı", "aga bu çok açık lan", "öff ne halin varsa gör", "glow up zamanı", "toxic döngü", "sus ve dinle", "bunu duyunca ben 💀", "bu beni neden etkiledi", "ya senden bıktım ama devam et" gibi güncel internet dilini kullan. Sansürsüz, serbest, yaratıcı.
 
 REFERANS (arka planda kullan, hiç söyleme):
 [Metin Kiraz] Planet-kart: Serseri=Uranüs(özgürlük), Büyücü=Merkür(zeka/iletişim), Yüce Rahibe=Ay(sezgi/bilinçdışı), İmparatoriçe=Venüs(bereket/sevgi), İmparator=Mars(güç/otorite), Hiyerofant=Boğa(gelenek), Aşıklar=İkizler/Venüs(seçim/ilişki), Savaş Arabası=Yengeç(kontrol/zafer), Güç=Aslan(cesaret/şefkat), Ermiş=Başak(bilgelik/yalnızlık), Kader Çarkı=Jüpiter(değişim/şans), Adalet=Terazi(denge/hak), Asılan Adam=Neptün(feda/bekleyiş), Ölüm=Akrep/Plüton(dönüşüm), Denge=Yay(uyum/sabır), Şeytan=Oğlak/Satürn(bağımlılık), Kule=Mars(yıkım/uyanış), Yıldız=Kova(umut/şifa), Ay=Balık(yanılsama/korku), Güneş=Güneş(başarı/mutluluk), Yargı=Plüton(uyanış), Dünya=Satürn(tamamlanma). Kupalar=Su/duygu, Kılıçlar=Hava/zihin, Asalar=Ateş/enerji, Tılsımlar=Toprak/madde. Sayılar: 1=başlangıç, 2=seçim, 3=büyüme, 4=yapı, 5=zorluk, 6=uyum, 7=içe bakış, 8=güç, 9=tamamlanma, 10=döngü sonu.
