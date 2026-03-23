@@ -803,14 +803,14 @@ Follow the format exactly. Output only the formatted response.`;
 
   const prompt = lang==='tr'
     ? isDaily
-      ? `Kullanıcı adı: ${uName}. Bugünün tarot kartı:\n${cdesc}\n\nGünlük kart yorumu yaz. ${uName} ismini 1-2 kez kullan. Sabah enerjisi, güne hazırlık tonu. Kartın astroloji ve numeroloji bağlamını ince bir dokunuş olarak ekle.\n\nTAM OLARAK bu formatta ver:\nYORUM: [180-220 kelime günlük yorum. Kartın enerjisini bugüne yansıt.]\n---\nÖZET: [Tek cümle. "Bugün seni..." ile başla.]\n---\nNİYET: [Tek niyet cümlesi. "Bugün ben..." ile başla.]`
+      ? `Kullanıcı adı: ${uName}. Bugünün tarot kartı:\n${cdesc}\n\nGünlük kart yorumu yaz. ${uName} ismini 1-2 kez kullan. Sabah enerjisi, güne hazırlık tonu. Kartın astroloji ve numeroloji bağlamını ince bir dokunuş olarak ekle.\n\nTAM OLARAK bu formatta ver:\nYORUM: [Sabah enerjisini yansıt. Ne kadar gerekiyorsa o kadar yaz.]\n---\nÖZET: [Tek cümle. "Bugün seni..." ile başla.]\n---\nNİYET: [Tek niyet cümlesi. "Bugün ben..." ile başla.]`
       : `Kullanıcı adı: ${uName}.\n\nKULLANICININ SORUSU (TÜM YORUM BU SORUYA ODAKLANMALI): "${q}"\n\nKonu: ${cn}${hCtx}\n\nKartlar:\n${cdesc}\n\nBU SORUYA DOĞRUDAN CEVAP VER. Soru ne soruyorsa onu cevapla — kart anlamlarını bu soruya bağla. ${uName} ismini 1-2 kez kullan. Her kartın sembolik derinliğini ve pozisyon anlamını kullan. Astroloji/numeroloji bağlamını ince dokunuşlarla ekle. Soru türüne uygun ton kullan.\n\nTAM OLARAK bu formatta ver:\nYORUM: [KESİNLİKLE kart adı, pozisyon adı, düz/ters SÖYLEME. Şu yapıyı kullan:
 
 1. GİRİŞ: Kişinin genel durumunu, enerjisini bir bütün olarak gör. "Bak şu an senin durumun şöyle..." diye başla. Zorba tarzda.
 
 2. GELİŞME: Geçmiş-şimdi-gelecek veya içsel-dışsal çatışmaları birbirine bağla. Hikaye anlat. "Geçmişte şöyle bir şey var, bu seni şu an şöyle etkiliyor, ama bir de şu var ki..." diye ak. Kart adı yok, enerji var. Zorbalamayı, espriyi, memi katıştır.
 
-3. SONUÇ: Son cümle vurucu olsun. Tüm söylenenleri tek bir net mesaja bağla. "Yani sonuçta lan, asıl mesele şu:" gibi. Bırak etki yapsın.
+3. SONUÇ: Son cümle vurucu olsun. Tüm söylenenleri tek bir net mesaja bağla. Her seferinde farklı bitir. "lan" ile bitirme alışkanlığı yapma.
 
 Hikaye gibi aksın, kart raporu gibi sıralamasın. Zorba tarzı koru.]\n---\nÖZET: [Tek güçlü cümle.]\n---\nADIM: [Vaaz verme, öğüt verme, 'belki' deme. Zorba, esprili, meme dili, güncel internet argosunu kullan. 'Öff ne halin varsa gör', 'ya söylediklerimi dinlesen', 'hayırlısı', 'bence sus ve yap şunu', 'aga bu çok açık lan' gibi. Kısa, sert, güldürücü.]`
     : isDaily
@@ -827,7 +827,7 @@ Flow like a story, not a card report. Keep zorba style.]\n---\nSUMMARY: [One pow
 
   try{
     // Token limits by spread type
-    const tokenMap = {s1: 500, s5: 1500, celtic: 3000};
+    const tokenMap = {s1: 800, s5: 2000, celtic: 4000};
     const isDaily = (cat==='daily');
     const maxTok = isDaily ? 400 : (tokenMap[spread] || 500);
     const raw = await callClaude(sysprompt, prompt, maxTok);
